@@ -95,7 +95,7 @@
                 </div>
             </div>
             
-            <div class="row right-align" style="">
+            <div class="row right-align">
                 <div class="col s12">
                     <button type="submit" class="waves-effect waves-light btn">Daftar<i
                             class="material-icons right">send</i></button>

@@ -16,13 +16,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-
-    if(Auth::check()){
-        return redirect('dashboard');
-    }
-    return view('login.login');
-});
+Route::get('/', 'UserController@loginIndex')->name('login');
 
 Route::post('/authenticate', 'UserController@authenticate');
 Route::get('/register', 'UserController@registerIndex');

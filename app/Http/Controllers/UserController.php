@@ -12,6 +12,13 @@ use Illuminate\Support\Str;
 class UserController extends Controller
 {
 
+    public function loginIndex(){
+        if(Auth::check()){
+            return redirect('dashboard');
+        }
+        return view('login.login');
+    }
+
     public function authenticate(Request $request){
         $credentials = $request->only('email', 'password');
 
