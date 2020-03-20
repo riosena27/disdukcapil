@@ -6,31 +6,34 @@
 
 <div class="card">
     <div class="card-content">
-        <img class="responsive-img" width="150" src="{{url('/asset/layout/login/Logo Kota Balikpapan.jpg')}}">
-        
+        <img class="responsive-img" width="150" src="{{url('/asset/layout/login/logobpp.png')}}">
+
         <div class="row">
             <div class="col s12">
                 <h6><b>SISTEM INFORMASI DISDUKCAPIL</b> </h6>
             </div>
         </div>
-        <div class="row" style="margin:0">
-            <div class="input-field col s12" style="margin:0">
-                <input id="email" type="email" class="validate" name="password">
-                <label for="email">Email</label>
+        <form action="{{url('authenticate')}}" method="post">
+            @csrf
+            <div class="row" style="margin:0">
+                <div class="input-field col s12" style="margin:0">
+                    <input id="email" type="email" class="validate" name="email">
+                    <label for="email">Email</label>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="password" type="password" class="validate" name="password">
-                <label for="password">Password</label>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="password" type="password" class="validate" name="password">
+                    <label for="password">Password</label>
+                </div>
             </div>
-        </div>
 
+            <div class="row">
+                <button type="submit" class="waves-effect waves-light btn">Login</a>
+            </div>
+        </form>
         <div class="row">
-            <a class="waves-effect waves-light btn">Login</a>
-        </div>
-        <div class="row">
-            Belum punya akun? <a href="#"><u>Daftar disini.</u></a>
+            Belum punya akun? <a href="{{url('register')}}"><u>Daftar disini.</u></a>
         </div>
     </div>
 </div>
