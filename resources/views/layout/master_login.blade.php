@@ -71,7 +71,6 @@
     @yield('javascript')
 
     <script>
-        var showPass = 0;
         $('.btn-show-pass').on('click', function(){
             var button = document.getElementById("password");
                 if (button.type === "password") {
