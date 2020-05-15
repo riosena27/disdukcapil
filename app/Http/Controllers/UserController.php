@@ -31,14 +31,14 @@ class UserController extends Controller
     public function dashboard()
     {
         if (Auth::check()) {
-            return view('beranda.index');
+            return view('admin.index');
         }
         return redirect('/');
     }
     
     public function registerIndex(){
         if (Auth::check()) {
-            return view('beranda.index');
+            return view('admin.index');
         }
     
         return view('login.register');
