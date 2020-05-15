@@ -22,11 +22,18 @@ Route::post('/authenticate', 'UserController@authenticate');
 Route::get('/register', 'UserController@registerIndex');
 Route::post('register', 'UserController@register');
 
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin', 'AdminController@index');
+    Route::get('/redirect', 'UserController@redirectTo');
+});
+
 Route::middleware(['auth', 'verifikasi'])->group(function () {
 
-    Route::get('/dashboard', 'UserController@dashboard');
-
+    Route::get('/dashboard-user', 'UserController@dashboard');
 });
+
 
 Route::view('/thanks', 'login.notifikasi');
 Route::get('notifikasi', 'UserController@notification');

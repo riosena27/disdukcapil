@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Notifications\EmailNotification;
+use App\Role;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -14,7 +15,7 @@ class UserController extends Controller
 
     public function loginIndex(){
         if(Auth::check()){
-            return redirect('dashboard');
+            return redirect('redirect');
         }
         return view('login.login');
     }
@@ -23,16 +24,25 @@ class UserController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard');
+            return redirect()->intended('redirect');
         }
         return redirect('/');
     }
 
-    public function dashboard()
+    public function dashboard(){
+        return view('user.index');
+    }
+
+    public function redirectTo()
     {
+        
         if (Auth::check()) {
-            return view('admin.index');
+            if(Auth::user()->hasRole('admin')){
+                return redirect('admin');
+            }
+            return redirect('dashboard-user');
         }
+
         return redirect('/');
     }
     
@@ -47,6 +57,7 @@ class UserController extends Controller
     public function register(Request $request){
 
         $verificationCode = Str::random(6);
+        $userRole = Role::where('name' , 'User')->first();
 
         $request->validate([
             'nik' => 'required|unique:users,nik',
@@ -60,7 +71,7 @@ class UserController extends Controller
             'password' => 'required',
         ]);
 
-        User::create([
+        $user = User::create([
             'nik' => $request->nik,
             'nik_kk' => $request->nik_kk,
             'name' => $request->name,
@@ -72,6 +83,8 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
             'kode_verifikasi' => $verificationCode
         ]);
+
+        $user->role()->attach($userRole);
 
         return redirect('/notifikasi');
     }
