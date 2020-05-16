@@ -14,7 +14,7 @@
             SIM DISDUKCAPIL
         </div>
         <ul class="sidebar-navigation">
-            <li class="header">Navigation</li>
+            <li class="header">Admin</li>
             <li>
                 <a href="#">
                     <i class="fa fa-home" aria-hidden="true"></i> Manajemen User
@@ -25,22 +25,6 @@
                     <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
                 </a>
             </li>
-            <li class="header">Another Menu</li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-users" aria-hidden="true"></i> Friends
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-cog" aria-hidden="true"></i> Settings
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-info-circle" aria-hidden="true"></i> Information
-                </a>
-            </li>
         </ul>
     </div>
 
@@ -49,7 +33,7 @@
             <div class="col s12">
                 <div class="card">
                     <div class="card-content right-align">
-                        {{Auth::user()->name}} <a class="red-text" style="margin-left: 5px" href="">Logout</a> 
+                        {{Auth::user()->name}} <a class="red-text" style="margin-left: 5px" href="{{url('logout')}}">Logout</a> 
                     </div>
                 </div>
             </div>
@@ -61,6 +45,44 @@
     @include('layout.script')
 
     @yield('javascript')
+
+    <script>
+        @if(session('success'))     
+        new Noty({
+            text: '{{ session('success') }}',
+            type: 'success'
+        }).show();
+        @endif
+
+    </script>
+
+    <script>
+        @if(session('delete'))     
+        new Noty({
+            text: "{{ session('delete') }}",
+            type: 'error'
+        }).show();
+        @endif
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.tooltipped');
+            var instances = M.Tooltip.init(elems);
+            });
+    </script>
+    
+    <script>
+        $(document).ready(function () {
+            $('.delete-data').click(function () {
+                var url = $(this).attr('data-url');
+                var nama = $(this).attr('data-name');
+                console.log(nama);
+                $("#modal1").find(".modal-content").find("#delete").text("Apakah anda ingin menghapus data " + nama + "?");
+                $("#deleteForm").attr("action", url);
+            });
+        });
+    </script>
 
 </body>
 
