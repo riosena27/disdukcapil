@@ -25,13 +25,19 @@ Route::post('register', 'UserController@register');
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/admin', 'AdminController@index');
+    Route::get('/admin', 'AdminController@index')->middleware('can:admin');
+    Route::get('/admin/create-user', 'AdminController@create')->middleware('can:admin');
+    Route::post('/admin', 'AdminController@store')->middleware('can:admin');
+    Route::delete('/admin/{user}', 'AdminController@delete')->middleware('can:admin');
     Route::get('/redirect', 'UserController@redirectTo');
 });
 
 Route::middleware(['auth', 'verifikasi'])->group(function () {
 
     Route::get('/dashboard-user', 'UserController@dashboard');
+
+    Route::get('akta-kelahiran', 'User\AktaKelahiranController@index');
+    Route::get('akta-kelahiran/create', 'User\AktaKelahiranController@create');
 });
 
 

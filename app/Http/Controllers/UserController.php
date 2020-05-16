@@ -84,7 +84,7 @@ class UserController extends Controller
             'kode_verifikasi' => $verificationCode
         ]);
 
-        $user->role()->attach($userRole);
+        $user->roles()->attach($userRole);
 
         return redirect('/notifikasi');
     }
@@ -114,7 +114,7 @@ class UserController extends Controller
                 'remember_token' => 1,
             ]);
         
-        return redirect('dashboard');
+        return redirect('dashboard-user');
     }
 
     public function notification(){
