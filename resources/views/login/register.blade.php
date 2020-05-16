@@ -129,7 +129,7 @@
         var instances = M.Datepicker.init(elems, {
             defaultDate: new Date(currYear,1,31),
             maxDate: new Date(currYear,12,31),
-            yearRange: [1928, currYear],
+            yearRange: [1930, currYear],
             format: "yyyy/mm/dd"  
         });
     });

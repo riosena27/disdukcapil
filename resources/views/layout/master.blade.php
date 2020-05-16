@@ -46,6 +46,44 @@
 
     @yield('javascript')
 
+    <script>
+        @if(session('success'))     
+        new Noty({
+            text: '{{ session('success') }}',
+            type: 'success'
+        }).show();
+        @endif
+
+    </script>
+
+    <script>
+        @if(session('delete'))     
+        new Noty({
+            text: "{{ session('delete') }}",
+            type: 'error'
+        }).show();
+        @endif
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.tooltipped');
+            var instances = M.Tooltip.init(elems);
+            });
+    </script>
+    
+    <script>
+        $(document).ready(function () {
+            $('.delete-data').click(function () {
+                var url = $(this).attr('data-url');
+                var nama = $(this).attr('data-name');
+                console.log(nama);
+                $("#modal1").find(".modal-content").find("#delete").text("Apakah anda ingin menghapus data " + nama + "?");
+                $("#deleteForm").attr("action", url);
+            });
+        });
+    </script>
+
 </body>
 
 </html>

@@ -17,7 +17,7 @@
 
 
                 <ul class="hide-on-med-and-down right">
-                    <li class="{{Request::is('dashboard') ? 'active' : ''}}"><a href="{{url('dashboard')}}" class="teal-text">Beranda</a></li>
+                    <li class="{{Request::is('dashboard-user') ? 'active' : ''}}"><a href="{{url('dashboard-user')}}" class="teal-text">Layanan</a></li>
                     @guest
                     <li class="{{Request::is('register') ? 'active' : ''}}"><a href="{{url('register')}}"
                             class="teal-text">Buat
