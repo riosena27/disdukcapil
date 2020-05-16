@@ -37,7 +37,7 @@ class UsersSeeder extends Seeder
         ]);
 
         $kabid = User::create([
-            'name' => 'kabid',
+            'name' => 'Kabid',
             'email' => 'kabid@gmail.com',
             'password' => Hash::make('kabid123')
         ]);
