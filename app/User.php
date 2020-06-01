@@ -61,4 +61,8 @@ class User extends Authenticatable
 
         return false;
     }
+
+    public function aktakelahiran(){
+        return $this->hasMany('App\AktaKelahiran', 'user_id');
+    }
 }

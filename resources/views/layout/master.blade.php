@@ -14,6 +14,21 @@
             SIM DISDUKCAPIL
         </div>
         <ul class="sidebar-navigation">
+            @can('operator')
+            <li class="header">Operator</li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-home" aria-hidden="true"></i> Review
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+                </a>
+            </li>
+
+            @endcan
+            @can('admin')
             <li class="header">Admin</li>
             <li>
                 <a href="#">
@@ -25,6 +40,9 @@
                     <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
                 </a>
             </li>
+            @endcan
+            
+            
         </ul>
     </div>
 
@@ -54,6 +72,15 @@
         }).show();
         @endif
 
+    </script>
+
+    <script>
+        @if(session('update'))     
+        new Noty({
+            text: "{{ session('update') }}",
+            type: 'warning'
+        }).show();
+        @endif
     </script>
 
     <script>
