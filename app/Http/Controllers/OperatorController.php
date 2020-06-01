@@ -34,7 +34,27 @@ class OperatorController extends Controller
         $akta->review_operator = $request->review_operator;
         $akta->save();
 
+        if($akta->status_operator == 3){
+            $akta->status_kasie = 1;
+            $akta->save();
+
+            if(isset($akta->status_kabid)){
+                $akta->status_kabid = null;
+                $akta->review_kabid = null;
+                $akta->save();
+            }
+        }
+
         return redirect('operator/akta-kelahiran/')->with('success', 'Akta kelahiran '.$akta->nama_anak.' berhasil diperiksa' );
+    }
+
+    public function openPdf(AktaKelahiran $akta, Request $request){
+
+        $userName = $akta->user->name;
+
+        $path = storage_path('app/public/Data User/'.$userName.'/AktaKelahiran/'.$akta->no_resi.'/'.$request->pdf);
+
+        return response()->file($path);
     }
 
 }

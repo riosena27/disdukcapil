@@ -24,7 +24,7 @@
                 {{-- 1 --}}
                 <div class="row" style="margin-top: 20px">
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="NIK" type="number" class="validate" name="nik" value="{{old('NIK')}}" required>
+                        <input id="NIK" type="number" class="validate" name="nik" value="{{old('NIK')}}" data-length="16" required>
                         <label for="NIK">NIK</label>
                         <span class="helper-text" data-error="Isi NIK anda" data-success="Nama ok">Nomor Induk
                             Keluarga</span>
@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="nomor_kk" type="number" class="validate" name="nomor_kk" value="{{old('nomor_kk')}}" required>
+                        <input id="nomor_kk" type="number" class="validate" name="nomor_kk" value="{{old('nomor_kk')}}" data-length="16" required>
                         <label for="nomor_kk">Nomor KK*</label>
                         <span class="helper-text">Nomor Kartu Keluarga</span>
                         @error('nomor_kk')
@@ -205,7 +205,7 @@
                 {{-- 1 --}}
                 <div class="row" style="margin-top: 20px">
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="nik_ayah" type="number" class="validate" name="nik_ayah" value="{{old('nik_ayah')}}" required>
+                        <input id="nik_ayah" type="number" class="validate" name="nik_ayah" value="{{old('nik_ayah')}}" data-length="16" required>
                         <label for="nik_ayah">NIK Ayah</label>
                         <span class="helper-text" data-error="Isi nama anda" data-success="Nama ok">Nomor Induk
                             Keluarga Ayah</span>
@@ -282,7 +282,7 @@
                 {{-- 3 --}}
                 <div class="row" style="margin-top: 20px">
                     <div class="input-field col s3" style="margin: 0px" >
-                        <input id="nik_ibu" type="number" class="validate" name="nik_ibu" value="{{old('nik_ibu')}}" required>
+                        <input id="nik_ibu" type="number" class="validate" name="nik_ibu" value="{{old('nik_ibu')}}" data-length="16" required>
                         <label for="nik_ibu">NIK Ibu</label>
                         <span class="helper-text">Nomor Induk
                             Keluarga Ibu</span>
@@ -352,7 +352,7 @@
 
                 <div class="row" style="margin-top: 20px">
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="nik_saksi_1" type="number" class="validate" name="nik_saksi_1" value="{{old('nik_saksi_1')}}" required>
+                        <input id="nik_saksi_1" type="number" class="validate" name="nik_saksi_1" value="{{old('nik_saksi_1')}}" data-length="16" required>
                         <label for="nik_saksi_1">NIK Saksi 1*</label>
                         <span class="helper-text">Nomor Induk
                             Keluarga Saksi 1</span>
@@ -383,7 +383,7 @@
 
                 <div class="row" style="margin-top: 20px">
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="nik_saksi_2" type="number" class="validate" name="nik_saksi_2" value="{{old('nik_saksi_2')}}" required>
+                        <input id="nik_saksi_2" type="number" class="validate" name="nik_saksi_2" value="{{old('nik_saksi_2')}}" data-length="16" required>
                         <label for="nik_saksi_2">NIK Saksi 2*</label>
                         <span class="helper-text">Nomor Induk
                             Keluarga Saksi 1</span>
@@ -665,6 +665,11 @@
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.timepicker');
         var instances = M.Timepicker.init(elems);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+            var textNeedCount = document.querySelectorAll('#NIK, #nomor_kk, #nik_ayah, #nik_ibu, #nik_saksi_1, #nik_saksi_2');
+            M.CharacterCounter.init(textNeedCount);
     });
 </script>
 @endsection

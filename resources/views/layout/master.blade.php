@@ -17,7 +17,7 @@
             @can('operator')
             <li class="header">Operator</li>
             <li>
-                <a href="#">
+                <a href="{{url('operator')}}">
                     <i class="fa fa-home" aria-hidden="true"></i> Review
                 </a>
             </li>
@@ -28,11 +28,54 @@
             </li>
 
             @endcan
+            
             @can('admin')
             <li class="header">Admin</li>
             <li>
-                <a href="#">
+                <a href="{{url('admin')}}">
                     <i class="fa fa-home" aria-hidden="true"></i> Manajemen User
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+                </a>
+            </li>
+            @endcan
+
+            @can('kasie')
+            <li class="header">Kasie</li>
+            <li>
+                <a href="{{url('kasie')}}">
+                    <i class="fa fa-home" aria-hidden="true"></i> Review 
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+                </a>
+            </li>
+            @endcan
+
+            @can('kabid')
+            <li class="header">Kabid</li>
+            <li>
+                <a href="{{url('kabid')}}">
+                    <i class="fa fa-home" aria-hidden="true"></i> Review 
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+                </a>
+            </li>
+            @endcan
+
+            @can('kadis')
+            <li class="header">Kadis</li>
+            <li>
+                <a href="{{url('kadis')}}">
+                    <i class="fa fa-home" aria-hidden="true"></i> Review 
                 </a>
             </li>
             <li>

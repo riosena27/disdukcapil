@@ -13,7 +13,7 @@
                     <tr>
                         <th>No Pendaftaran</th>
                         <th>NIK Pemohon/Nama</th>
-                        <th width="250px">Status</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -21,34 +21,18 @@
                     @foreach ($akta as $item)
                         <tr>
                             <td>{{$item->no_resi}}</td>
-                            <td>{{$item->nik}}  - {{$item->nama_anak}}</td>
+                            <td>{{$item->nik}}  / {{$item->nama_anak}}</td>
                             <td>
-                                <ul class="collection">
-                                    <li class="collection-item">
-                                        Operator 
-                                        @if ($item->status_operator == 1)
-                                            <span class="new badge orange right" data-badge-caption="Diproses"></span>
-                                        @elseif($item->status_operator == 2)
-                                            <span class="new badge red right" data-badge-caption="Ditolak"></span>
+                                @if ($item->status_kabid == 3)
+                                            <span class="new badge green center-align" data-badge-caption="Disetujui"></span>
                                         @else
-                                            <span class="new badge green right" data-badge-caption="Disetujui"></span>
+                                            <span class="new badge orange center-align" data-badge-caption="Diproses"></span>
                                         @endif
-                                    </li>
-                                    <li class="collection-item">
-                                        Kasie
-                                    </li>
-                                    <li class="collection-item">
-                                        Kabid
-                                    </li>
-                                    <li class="collection-item">
-                                        Kadis
-                                    </li>
-                                </ul>
                             </td>
-                            <td class="center-align">
-                                <a href="{{url('akta-kelahiran/'.$item->id.'/edit')}}" class="btn-floating btn-large waves-effect waves-light green btn-small tooltipped" data-position="top" data-tooltip="Edit" style="margin-right: 8px"><i class="material-icons">create</i></a>
-
-                                <a class="btn-floating btn-large waves-effect waves-light red btn-small tooltipped" data-position="top" data-tooltip="Delete" style="margin-right: 8px"><i class="material-icons">clear</i></a>
+                            <td>
+                                @if ($item->status_operator == 2)
+                                    <a href="{{url('akta-kelahiran/'.$item->id.'/edit')}}" class="btn-floating btn-large waves-effect waves-light green btn-small tooltipped" data-position="top" data-tooltip="Edit" style="margin-right: 8px"><i class="material-icons">create</i></a>
+                                @endif
 
                                 <a class="btn-floating btn-large waves-effect waves-light blue btn-small tooltipped" data-position="top" data-tooltip="Lihat Detail"><i class="material-icons">folder_open</i></a>
 

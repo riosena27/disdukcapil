@@ -11,10 +11,10 @@
             <div class="card-content">
 
                 <div class="row">
-                    <a href="{{url('operator/akta-kelahiran')}}" class="waves-effect waves-light btn red left"><i
+                    <a href="{{url('kabid/akta-kelahiran')}}" class="waves-effect waves-light btn red left"><i
                             class="material-icons left">keyboard_backspace</i></a>
                 </div>
-                
+
                 <span class="card-title">Akta Kelahiran {{$akta->nama_anak}} </span>
                 <blockquote>
                     Data Bayi
@@ -351,59 +351,59 @@
 
                 <div class="row" style="margin-top: 30px">
                     <div class="file-field input-field col s6" style="margin:0px">
-                        <p>Surat Keterangan Lahir:</p> <a href="{{url('operator/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->surat_keterangan_lahir)}}" target="_blank">{{$akta->surat_keterangan_lahir}}</a>
+                        <p>Surat Keterangan Lahir:</p> <a href="{{url('kabid/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->surat_keterangan_lahir)}}" target="_blank">{{$akta->surat_keterangan_lahir}}</a>
                     </div>
 
                     <div class="file-field input-field col s6" style="margin:0px">
-                        <p>Kartu Keluarga:</p> <a href="{{url('operator/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->kartu_keluarga)}}" target="_blank">{{$akta->kartu_keluarga}}</a>
+                        <p>Kartu Keluarga:</p> <a href="{{url('kabid/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->kartu_keluarga)}}" target="_blank">{{$akta->kartu_keluarga}}</a>
                     </div>
                 </div>
 
                 <div class="row" style="margin-top: 30px">
                     <div class="file-field input-field col s6" style="margin:0px">
-                        <p>Keterangan Akta Orang Tua:</p> <a href="{{url('operator/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->keterangan_akta_orang_tua)}}" target="_blank">{{$akta->keterangan_akta_orang_tua}}</a>
+                        <p>Keterangan Akta Orang Tua:</p> <a href="{{url('kabid/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->keterangan_akta_orang_tua)}}" target="_blank">{{$akta->keterangan_akta_orang_tua}}</a>
                     </div>
 
                     <div class="file-field input-field col s6" style="margin:0px">
-                        <p>SPTJM Pasutri:</p> <a href="{{url('operator/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->sptjm_pasutri)}}" target="_blank">{{$akta->sptjm_pasutri}}</a>
+                        <p>SPTJM Pasutri:</p> <a href="{{url('kabid/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->sptjm_pasutri)}}" target="_blank">{{$akta->sptjm_pasutri}}</a>
                     </div>
                 </div>
 
                 <div class="row" style="margin-top: 30px">
                     <div class="file-field input-field col s6" style="margin:0px">
                         <p>Keterangan Permohonan Kelahiran:</p> <a
-                            href="{{url('operator/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->keterangan_permohonan_kelahiran)}}" target="_blank">{{$akta->keterangan_permohonan_kelahiran}}</a>
+                            href="{{url('kabid/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->keterangan_permohonan_kelahiran)}}" target="_blank">{{$akta->keterangan_permohonan_kelahiran}}</a>
                     </div>
 
                     <div class="file-field input-field col s6" style="margin:0px">
-                        <p>SPTJM Kebenaran Kelahiran:</p> <a href="{{url('operator/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->sptjm_kebenaran_kelahiran)}}" target="_blank">{{$akta->sptjm_kebenaran_kelahiran}}</a>
-                    </div>
-                </div>
-
-                <div class="row" style="margin-top: 30px">
-                    <div class="file-field input-field col s6" style="margin:0px">
-                        <p>Keterangan Anak Kawin:</p> <a href="{{url('operator/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->keterangan_anak_kawin)}}" target="_blank">{{$akta->keterangan_anak_kawin}}</a>
-                    </div>
-
-                    <div class="file-field input-field col s6" style="margin:0px">
-                        <p>Pernyataan Saksi:</p> <a href="{{url('operator/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->pernyataan_saksi)}}" target="_blank">{{$akta->pernyataan_saksi}}</a>
+                        <p>SPTJM Kebenaran Kelahiran:</p> <a href="{{url('kabid/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->sptjm_kebenaran_kelahiran)}}" target="_blank">{{$akta->sptjm_kebenaran_kelahiran}}</a>
                     </div>
                 </div>
 
                 <div class="row" style="margin-top: 30px">
                     <div class="file-field input-field col s6" style="margin:0px">
-                        <p>KTP Saksi Kelahiran(Balikpapan):</p> <a href="{{url('operator/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->ktp_saksi_balikpapan)}}" target="_blank">{{$akta->ktp_saksi_balikpapan}}</a>
+                        <p>Keterangan Anak Kawin:</p> <a href="{{url('kabid/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->keterangan_anak_kawin)}}" target="_blank">{{$akta->keterangan_anak_kawin}}</a>
                     </div>
 
                     <div class="file-field input-field col s6" style="margin:0px">
-                        <p>Surat Kuasa(Jika Diwakilkan):</p> <a href="{{url('operator/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->surat_kuasa)}}" target="_blank">{{$akta->surat_kuasa}}</a>
+                        <p>Pernyataan Saksi:</p> <a href="{{url('kabid/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->pernyataan_saksi)}}" target="_blank">{{$akta->pernyataan_saksi}}</a>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 30px">
+                    <div class="file-field input-field col s6" style="margin:0px">
+                        <p>KTP Saksi Kelahiran(Balikpapan):</p> <a href="{{url('kabid/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->ktp_saksi_balikpapan)}}" target="_blank">{{$akta->ktp_saksi_balikpapan}}</a>
+                    </div>
+
+                    <div class="file-field input-field col s6" style="margin:0px">
+                        <p>Surat Kuasa(Jika Diwakilkan):</p> <a href="{{url('kabid/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->surat_kuasa)}}" target="_blank">{{$akta->surat_kuasa}}</a>
                     </div>
                 </div>
 
                 <div class="row" style="margin-top: 30px">
                     <div class="file-field input-field col s6" style="margin:0px">
                         <p>Fotocopy Akta Anak Sebelumnya (jika anak kedua):</p> <a
-                            href="{{url('operator/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->fotocopy_akta_anak)}}" target="_blank">{{$akta->fotocopy_akta_anak}}</a>
+                            href="{{url('kabid/akta-kelahiran/'.$akta->id.'/open-pdf?pdf='.$akta->fotocopy_akta_anak)}}" target="_blank">{{$akta->fotocopy_akta_anak}}</a>
                     </div>
                 </div>
 
@@ -414,29 +414,14 @@
         <div class="card">
             <div class="card-content">
                 <span class="card-title">Review <button data-target="modal1"
-                    class="waves-effect waves-light orange btn-small tooltipped btn modal-trigger right review"
-                    data-position="top" data-tooltip="Hasil Review">Hasil Review Sebelumnya<i
-                        class="material-icons right">history</i></button></span>
+                        class="waves-effect waves-light blue btn-small tooltipped btn modal-trigger right review"
+                        data-position="top" data-tooltip="Hasil Review">Hasil Review Sebelumnya<i
+                            class="material-icons right">history</i></button></span>
 
                 {{-- modal --}}
                 <div id="modal1" class="modal">
                     <div class="modal-content">
                         <h4>Hasil Review</h4>
-                        @isset($akta->review_operator)
-                        <div class="card">
-                            <div class="card-content">
-                                <p>Review Operator: @if ($akta->status_operator == 1)
-                                    <span class="new badge orange right" data-badge-caption="Diproses"></span>
-                                    @elseif($akta->status_operator == 2)
-                                    <span class="new badge red right" data-badge-caption="Ditolak"></span>
-                                    @else
-                                    <span class="new badge green right" data-badge-caption="Disetujui"></span>
-                                    @endif</p>
-                                <p>{{$akta->review_operator}}</p>
-                            </div>
-                        </div>
-                        @endisset
-
                         @isset($akta->review_kasie)
                         <div class="card">
                             <div class="card-content">
@@ -452,19 +437,35 @@
                         </div>
                         @endisset
 
+                        @isset($akta->review_kadis)
+                        <div class="card">
+                            <div class="card-content">
+                                <p>Review Kadis: @if ($akta->status_kadis == 1)
+                                    <span class="new badge orange right" data-badge-caption="Diproses"></span>
+                                    @elseif($akta->status_kadis == 2)
+                                    <span class="new badge red right" data-badge-caption="Ditolak"></span>
+                                    @else
+                                    <span class="new badge green right" data-badge-caption="Disetujui"></span>
+                                    @endif</p>
+                                <p>{{$akta->review_kadis}}</p>
+                            </div>
+                        </div>
+                        @endisset
+
                     </div>
                     <div class="modal-footer">
                         <a href="#!" class="modal-close waves-effect waves-green btn red">Cancel</a>
                     </div>
                 </div>
 
-                <form action="{{url('operator/akta-kelahiran/'.$akta->id)}}" method="POST">
+                <form action="{{url('kabid/akta-kelahiran/'.$akta->id)}}" method="POST">
                     @method('put')
                     @csrf
 
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="textarea2" class="materialize-textarea" name="review_operator" required></textarea>
+                            <textarea id="textarea2" class="materialize-textarea" name="review_kabid"
+                                required></textarea>
                             <label for="textarea2">Review:</label>
                             <span class="helper-text">Berikan review untuk akta kelahiran ini.</span>
                         </div>
@@ -472,15 +473,15 @@
 
 
                     <label style="margin-right: 8px">
-                        <input name="status_operator" type="radio" value="3" required/>
+                        <input name="status_kabid" type="radio" value="3" required />
                         <span>Setuju</span>
                     </label>
 
                     <label>
-                        <input name="status_operator" type="radio" value="2" required/>
+                        <input name="status_kabid" type="radio" value="2" required />
                         <span>Tolak</span>
                     </label>
-                    
+
                     <div class="row" style="margin-top: 30px; margin-bottom:0px">
                         <div class="col s12">
                             <button class="waves-effect waves-light btn right" type="submit">Simpan</button>
