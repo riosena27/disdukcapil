@@ -43,6 +43,15 @@ class UserController extends Controller
             if(Auth::user()->hasRole('operator')){
                 return redirect('operator');
             }
+            if(Auth::user()->hasRole('kasie')){
+                return redirect('kasie');
+            }
+            if(Auth::user()->hasRole('kabid')){
+                return redirect('kabid');
+            }
+            if(Auth::user()->hasRole('kadis')){
+                return redirect('kadis');
+            }
             return redirect('dashboard-user');
         }
 

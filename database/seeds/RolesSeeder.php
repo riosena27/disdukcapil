@@ -38,6 +38,11 @@ class RolesSeeder extends Seeder
             'deskripsi' => 'Kabid'
         ]);
 
+        Role::create([
+            'name' => 'Kadis',
+            'deskripsi' => 'Kadis'
+        ]);
+
 
     }
 }
