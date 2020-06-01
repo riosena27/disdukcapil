@@ -30,6 +30,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/admin', 'AdminController@store')->middleware('can:admin');
     Route::delete('/admin/{user}', 'AdminController@delete')->middleware('can:admin');
     Route::get('/redirect', 'UserController@redirectTo');
+
+    Route::get('/operator', 'OperatorController@index');
+    Route::get('/operator/akta-kelahiran', 'OperatorController@akta');
+    Route::get('/operator/akta-kelahiran/{akta}', 'OperatorController@createReview');
+    Route::put('/operator/akta-kelahiran/{akta}', 'OperatorController@storeReview');
 });
 
 Route::middleware(['auth', 'verifikasi'])->group(function () {
@@ -38,6 +43,9 @@ Route::middleware(['auth', 'verifikasi'])->group(function () {
 
     Route::get('akta-kelahiran', 'User\AktaKelahiranController@index');
     Route::get('akta-kelahiran/create', 'User\AktaKelahiranController@create');
+    Route::post('akta-kelahiran', 'User\AktaKelahiranController@store');
+    Route::get('akta-kelahiran/{akta}/edit', 'User\AktaKelahiranController@edit');
+    Route::put('akta-kelahiran/{akta}', 'User\AktaKelahiranController@update');
 });
 
 

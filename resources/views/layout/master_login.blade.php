@@ -53,6 +53,41 @@
 
     </script>
 
+<script>
+    @if(session('success'))     
+    new Noty({
+        text: '{{ session('success') }}',
+        type: 'success'
+    }).show();
+    @endif
+
+</script>
+
+<script>
+    @if(session('update'))     
+    new Noty({
+        text: "{{ session('update') }}",
+        type: 'warning'
+    }).show();
+    @endif
+</script>
+
+<script>
+    @if(session('delete'))     
+    new Noty({
+        text: "{{ session('delete') }}",
+        type: 'error'
+    }).show();
+    @endif
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.tooltipped');
+        var instances = M.Tooltip.init(elems);
+        });
+</script>
+
 </body>
 
 
