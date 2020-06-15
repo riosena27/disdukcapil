@@ -21,11 +21,6 @@
                     <i class="fa fa-home" aria-hidden="true"></i> Review
                 </a>
             </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
-                </a>
-            </li>
 
             @endcan
             
@@ -34,11 +29,6 @@
             <li>
                 <a href="{{url('admin')}}">
                     <i class="fa fa-home" aria-hidden="true"></i> Manajemen User
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
                 </a>
             </li>
             @endcan
@@ -50,11 +40,6 @@
                     <i class="fa fa-home" aria-hidden="true"></i> Review 
                 </a>
             </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
-                </a>
-            </li>
             @endcan
 
             @can('kabid')
@@ -62,11 +47,6 @@
             <li>
                 <a href="{{url('kabid')}}">
                     <i class="fa fa-home" aria-hidden="true"></i> Review 
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
                 </a>
             </li>
             @endcan
@@ -78,13 +58,13 @@
                     <i class="fa fa-home" aria-hidden="true"></i> Review 
                 </a>
             </li>
+            
+            @endcan
             <li>
-                <a href="#">
-                    <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+                <a href="{{url('riwayat')}}">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Riwayat
                 </a>
             </li>
-            @endcan
-            
             
         </ul>
     </div>
@@ -111,7 +91,8 @@
         @if(session('success'))     
         new Noty({
             text: '{{ session('success') }}',
-            type: 'success'
+            type: 'success',
+            timeout: 2000
         }).show();
         @endif
 
@@ -121,7 +102,8 @@
         @if(session('update'))     
         new Noty({
             text: "{{ session('update') }}",
-            type: 'warning'
+            type: 'warning',
+            timeout: 2000
         }).show();
         @endif
     </script>
@@ -130,10 +112,31 @@
         @if(session('delete'))     
         new Noty({
             text: "{{ session('delete') }}",
-            type: 'error'
+            type: 'error',
+            timeout: 2000
         }).show();
         @endif
     </script>
+
+    <script>
+        @if(session('red'))     
+        new Noty({
+            text: "{{ session('red') }}",
+            type: 'error',
+            timeout: 2000
+        }).show();
+        @endif
+    </script>
+
+<script>
+    @if(session('blue'))     
+    new Noty({
+        text: "{{ session('blue') }}",
+        type: 'info',
+        timeout: 2000
+    }).show();
+    @endif
+</script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

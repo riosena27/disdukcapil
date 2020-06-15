@@ -27,6 +27,7 @@
                     @endguest
                     <li><a href="" class="teal-text">Status Akun</a></li>
                     @auth
+                    <li class="{{Request::is('riwayat-user') ? 'active' : ''}}"><a href="{{url('riwayat-user')}}" class="teal-text">Riwayat</a></li>
                     <li><a href="{{url('logout')}}" class="red-text">Logout</a></li>
                     @endauth
                 </ul>
