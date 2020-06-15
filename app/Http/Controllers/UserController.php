@@ -26,7 +26,7 @@ class UserController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect()->intended('redirect');
         }
-        return redirect('/');
+        return redirect('/')->with('failed', 'Username atau password anda salah');
     }
 
     public function dashboard(){
@@ -72,9 +72,7 @@ class UserController extends Controller
         $userRole = Role::where('name' , 'User')->first();
 
         $request->validate([
-            'nik' => 'required|unique:users,nik',
-            'nik_kk' => 'required|unique:users,nik_kk',
-            'name' => 'required|unique:users,name',
+            'name' => 'required',
             'jenis_kelamin' => 'required',
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
@@ -84,8 +82,6 @@ class UserController extends Controller
         ]);
 
         $user = User::create([
-            'nik' => $request->nik,
-            'nik_kk' => $request->nik_kk,
             'name' => $request->name,
             'jenis_kelamin' => $request->jenis_kelamin,
             'tempat_lahir' => $request->tempat_lahir,
