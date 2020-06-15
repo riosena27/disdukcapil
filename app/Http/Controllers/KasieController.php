@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\AktaKelahiran;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class KasieController extends Controller
 {
@@ -37,8 +38,10 @@ class KasieController extends Controller
 
     public function storeReview(Request $request, AktaKelahiran $akta){
         
+        $kasie = Auth::user()->id;
         $akta->status_kasie = $request->status_kasie;
         $akta->review_kasie = $request->review_kasie;
+        $akta->kasie_id = $kasie;
         $akta->save();
 
         if($request->status_kasie == 3){
