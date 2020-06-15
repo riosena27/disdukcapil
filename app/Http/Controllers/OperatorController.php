@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\AktaKelahiran;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OperatorController extends Controller
 {
@@ -12,8 +13,7 @@ class OperatorController extends Controller
     }
 
     public function akta(){
-        $aktaUser = AktaKelahiran::where('status_operator', 1)
-                                            ->orWhere('status_kasie', 2)->get();
+        $aktaUser = AktaKelahiran::where('status_operator', 1)->orWhere('status_kasie', 2)->get();
 
         return view('operator.akta_kelahiran.index', [
             'aktaUser' => $aktaUser
@@ -30,9 +30,15 @@ class OperatorController extends Controller
 
     public function storeReview(Request $request, AktaKelahiran $akta){
         
+        $data = $request->except(['surat_keterangan_lahir', 'kartu_keluarga', 'keterangan_akta_orang_tua', 'sptjm_pasutri', 'keterangan_permohonan_kelahiran', 'sptjm_kebenaran_kelahiran', 'keterangan_anak_kawin', 'pernyataan_saksi', 'ktp_saksi_balikpapan', 'surat_kuasa', 'fotocopy_akta_anak']);
+        $akta->update($data);
+        
+        $operator = Auth::user()->id;
         $akta->status_operator = $request->status_operator;
         $akta->review_operator = $request->review_operator;
+        $akta->operator_id = $operator;
         $akta->save();
+        
 
         if($akta->status_operator == 3){
             $akta->status_kasie = 1;
