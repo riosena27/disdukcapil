@@ -65,4 +65,21 @@ class User extends Authenticatable
     public function aktakelahiran(){
         return $this->hasMany('App\AktaKelahiran', 'user_id');
     }
+
+    public function reviewOperator(){
+        return $this->hasMany('App\AktaKelahiran', 'operator_id');
+    }
+
+    public function reviewKasie(){
+        return $this->hasMany('App\AktaKelahiran', 'kasie_id');
+    }
+
+    public function reviewKabid(){
+        return $this->hasMany('App\AktaKelahiran', 'kabid_id');
+    }
+
+    public function reviewKadis(){
+        return $this->hasMany('App\AktaKelahiran', 'kadis_id');
+    }
+
 }

@@ -12,7 +12,7 @@
                 <thead>
                     <tr>
                         <th>No Pendaftaran</th>
-                        <th>NIK Pemohon/Nama</th>
+                        <th>Nama Anak</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
@@ -21,12 +21,14 @@
                     @foreach ($akta as $item)
                         <tr>
                             <td>{{$item->no_resi}}</td>
-                            <td>{{$item->nik}}  / {{$item->nama_anak}}</td>
+                            <td>{{$item->nama_anak}}</td>
                             <td>
                                 @if ($item->status_kabid == 3)
                                             <span class="new badge green center-align" data-badge-caption="Disetujui"></span>
+                                        @elseif($item->status_operator == 2)
+                                            <span class="new badge red center-align" data-badge-caption="Ditolak petugas"></span>
                                         @else
-                                            <span class="new badge orange center-align" data-badge-caption="Diproses"></span>
+                                        <span class="new badge orange center-align" data-badge-caption="Diproses"></span>
                                         @endif
                             </td>
                             <td>

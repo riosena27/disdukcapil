@@ -16,6 +16,8 @@ class AddKadisToAktaKelahiranTable extends Migration
         Schema::table('akta_kelahiran', function (Blueprint $table) {
             $table->string('status_kadis')->nullable();
             $table->text('review_kadis')->nullable();
+            $table->unsignedBigInteger('kadis_id')->nullable();
+            $table->foreign('kadis_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

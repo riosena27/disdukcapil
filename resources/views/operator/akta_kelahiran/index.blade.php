@@ -29,7 +29,7 @@
                         @foreach ($aktaUser as $item)
                             <tr>
                                 <td>{{$item->no_resi}}</td>
-                                <td>{{$item->nik}}  - {{$item->nama_anak}}</td>
+                                <td>{{$item->nama_anak}}</td>
                                 <td>
                                     {{$item->created_at->format('j F Y')}}
                                 </td>

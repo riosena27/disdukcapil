@@ -1,6 +1,6 @@
 @extends('layout.master')
 
-@section('title', 'Beranda')
+@section('title', 'Manajemen User')
 
 @section('content')
 
@@ -29,7 +29,7 @@
                             <td>{{$usr->email}}</td>
                             <td>{{implode(', ', $usr->roles()->get()->pluck('name')->toArray())}}</td>
                             <td>
-                                <a class="btn-floating btn-large waves-effect waves-light green btn-small tooltipped"
+                                <a href="{{url('admin/'.$usr->id.'/edit')}}" class="btn-floating btn-large waves-effect waves-light green btn-small tooltipped"
                                     data-position="top" data-tooltip="Edit" style="margin-right: 8px"><i
                                         class="material-icons">create</i></a>
 
@@ -57,12 +57,10 @@
                         </div>
                     </div>
                 </form>
+            </div>
+
                 
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
-            </div>
+
         </div>
     </div>
 </div>

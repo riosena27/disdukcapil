@@ -16,24 +16,10 @@
 
             <form action="{{url('register')}}" method="post">
                 @csrf
-                <div class="row" style="margin:0">
-                    <div class="input-field col s6">
-                        <input id="nik" type="number" class="validate" name="nik" data-length="16">
-                        <label for="nik">NIK</label>
-                        <span class="helper-text left-align" data-error="Masukkan NIK anda yang valid">NIK pada
-                            ktp.</span>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="nik_kk" type="number" name="nik_kk" class="validate" data-length="16">
-                        <label for="nik_kk">NIK *KK*</label>
-                        <span class="helper-text left-align" data-error="Masukkan NIK KK anda yang valid">NIK pada kartu
-                            keluarga.</span>
-                    </div>
-                </div>
 
                 <div class="row" style="margin-left:0;margin-right:0">
                     <div class="input-field col s12">
-                        <input id="name" type="text" class="validate" name="name">
+                        <input id="name" type="text" class="validate" name="name" value="{{old('name')}}">
                         <label for="name">Nama Anda</label>
                         <span class="helper-text left-align" data-error="Nama anda terlalu singkat">Berikan nama lengkap
                             anda.</span>
@@ -45,8 +31,8 @@
                     <div class="input-field col s12">
                         <select id="select" name="jenis_kelamin">
                             <option value="" disabled selected> Pilih Kelamin Anda</option>
-                            <option value="1">Laki-laki</option>
-                            <option value="2">Wanita</option>
+                            <option value="Laki-Laki">Laki-laki</option>
+                            <option value="Wanita">Wanita</option>
                         </select>
                         <label>Jenis Kelamin</label>
                     </div>
@@ -54,7 +40,7 @@
 
                 <div class="row" style="margin:0">
                     <div class="input-field col s12">
-                        <input id="tempat_lahir" type="text" class="validate" name="tempat_lahir">
+                        <input id="tempat_lahir" type="text" class="validate" name="tempat_lahir" value="{{old('tempat_lahir')}}">
                         <label for="tempat_lahir">Tempat Lahir</label>
                         <span class="helper-text left-align">Tempat lahir anda.</span>
                     </div>
@@ -62,7 +48,7 @@
 
                 <div class="row" style="margin:0">
                     <div class="input-field col s12">
-                        <input id="tanggal_lahir" type="text" class="datepicker" name="tanggal_lahir">
+                        <input id="tanggal_lahir" type="text" class="datepicker" name="tanggal_lahir" value="{{old('tanggal_lahir')}}">
                         <label for="tanggal_lahir">Tanggal Lahir</label>
                         <span class="helper-text left-align">Tanggal lahir anda.</span>
                     </div>
@@ -70,7 +56,7 @@
 
                 <div class="row" style="margin:0">
                     <div class="input-field col s12">
-                        <input id="no_hp" type="number" class="validate" name="no_hp">
+                        <input id="no_hp" type="number" class="validate" name="no_hp" value="{{old('no_hp')}}">
                         <label for="no_hp">No. Handphone</label>
                         <span class="helper-text left-align" data-error="cth: 0812214214">Gunakan nomor handphone anda
                             yang sedang aktif.</span>
@@ -80,7 +66,7 @@
 
                 <div class="row" style="margin:0">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate" name="email">
+                        <input id="email" type="email" class="validate" name="email" value="{{old('email')}}">
                         <label for="email">Email</label>
                         <span class="helper-text left-align" data-error="cth email: fad@gmail.com"
                             data-success="right">Gunakan email anda yang valid.</span>
@@ -130,13 +116,7 @@
             defaultDate: new Date(currYear,1,31),
             maxDate: new Date(currYear,12,31),
             yearRange: [1930, currYear],
-            format: "yyyy/mm/dd"  
         });
-    });
-
-    document.addEventListener('DOMContentLoaded', function () {
-            var textNeedCount = document.querySelectorAll('#nik, #nik_kk');
-            M.CharacterCounter.init(textNeedCount);
     });
 
 </script>

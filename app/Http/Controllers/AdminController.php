@@ -53,4 +53,33 @@ class AdminController extends Controller
         $user->delete();
         return back()->with('delete', $user->name.' berhasil dihapus');
     }
+
+    public function edit(User $user){
+        $userRole = Role::where('name', '!=', 'User')->get();
+
+        return view('admin.edit', [
+            'user' => $user,
+            'userRole' => $userRole
+        ]);
+    }
+
+    public function update(User $user, Request $request){
+        
+        $user->roles()->sync($request->role);
+
+        $request->validate([
+            'name' => 'required|unique:users,name,' . $user->id . 'id',
+            'email' => 'required|unique:users,email,' . $user->id . 'id',
+        ]);
+
+        User::where('id', $user->id)
+            ->update([
+                'name' => $request->name,
+                'email' => $request->email,
+            ]);
+
+        
+
+        return redirect('admin')->with('update', 'Data '.$user->name.' berhasil diubah');
+    }
 }
