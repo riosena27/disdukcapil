@@ -25,7 +25,7 @@
                     <li class="{{Request::is('/') ? 'active' : ''}}"><a href="{{url('/')}}" class="teal-text">Masuk</a>
                     </li>
                     @endguest
-                    <li><a href="" class="teal-text">Status Akun</a></li>
+                    <li class="{{Request::is('status-akun') ? 'active' : ''}}"><a href="{{url('status-akun')}}" class="teal-text">Status Akun</a></li>
                     @auth
                     <li class="{{Request::is('riwayat-user') ? 'active' : ''}}"><a href="{{url('riwayat-user')}}" class="teal-text">Riwayat</a></li>
                     <li><a href="{{url('logout')}}" class="red-text">Logout</a></li>
@@ -58,7 +58,8 @@
     @if(session('success'))     
     new Noty({
         text: '{{ session('success') }}',
-        type: 'success'
+        type: 'success',
+        timeout: 2000
     }).show();
     @endif
 
@@ -68,7 +69,19 @@
     @if(session('update'))     
     new Noty({
         text: "{{ session('update') }}",
-        type: 'warning'
+        type: 'warning',
+        timeout: 2000
+    }).show();
+    @endif
+</script>
+
+<script>
+    @if(session('status'))     
+    new Noty({
+        text: "{{ session('status') }}",
+        type: 'success',
+        layout   : 'center',
+        timeout: 3000
     }).show();
     @endif
 </script>
@@ -80,6 +93,18 @@
         type: 'error'
     }).show();
     @endif
+</script>
+
+<script>
+    @if(session('failed'))     
+    new Noty({
+        text: "{{ session('failed') }}",
+        type: 'error',
+        layout:'center',
+        timeout: 3000
+    }).show();
+    @endif
+
 </script>
 
 <script>

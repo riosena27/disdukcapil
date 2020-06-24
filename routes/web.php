@@ -71,15 +71,24 @@ use Illuminate\Support\Facades\Auth;
         Route::get('/kadis/akta-kelahiran/{akta}', 'KadisController@createReview');
         Route::put('/kadis/akta-kelahiran/{akta}', 'KadisController@storeReview');
     });
+
+    Route::middleware(['auth', 'can:loket'])->group(function () {
+
+        Route::get('/operator-loket', 'OperatorLoketController@index');
+        Route::put('/operator-loket/pengambilan/{akta}', 'OperatorLoketController@setPengambilan');
+    });
     
     
     Route::get('riwayat', 'RiwayatController@index')->middleware('auth');
+    Route::get('status-akun', 'StatusAkunController@index');
+    Route::get('status-akun/cari', 'StatusAkunController@index');
 
     Route::middleware(['auth', 'verifikasi'])->group(function () {
 
         Route::get('/dashboard-user', 'UserController@dashboard');
         Route::get('riwayat-user', 'User\RiwayatController@index');
         //akta kelahiran
+        Route::put('akta-kelahiran/pengambilan/{akta}','User\AktaKelahiranController@pengambilan');
         Route::get('akta-kelahiran', 'User\AktaKelahiranController@index');
         Route::get('akta-kelahiran/create', 'User\AktaKelahiranController@create');
         Route::post('akta-kelahiran', 'User\AktaKelahiranController@store');

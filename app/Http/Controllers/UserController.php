@@ -52,6 +52,9 @@ class UserController extends Controller
             if(Auth::user()->hasRole('kadis')){
                 return redirect('kadis');
             }
+            if(Auth::user()->hasRole('Operator Loket')){
+                return redirect('operator-loket');
+            }
             return redirect('dashboard-user');
         }
 

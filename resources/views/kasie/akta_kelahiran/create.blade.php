@@ -24,9 +24,10 @@
                 {{-- 1 --}}
                 <div class="row" style="margin-top: 20px">
                     <div class="input-field col s3">
-                        <input id="NIK" type="number" class="validate" name="nik" value="{{$akta->nik}}" disabled>
-                        <label for="NIK">NIK</label>
-                        <span class="helper-text" data-error="Isi nama anda" data-success="Nama ok">Nomor Induk Keluarga
+                        <input id="nama_anak" type="text" class="validate" name="nama_anak" value="{{$akta->nama_anak}}"
+                            disabled>
+                        <label for="nama_anak">Nama Anak*</label>
+                        <span class="helper-text">Nama Anak</span>
                     </div>
 
                     <div class="input-field col s3">
@@ -44,21 +45,17 @@
                     </div>
 
                     <div class="input-field col s3">
-                        <input id="nomor_kk" type="number" class="validate" name="nomor_kk" value="{{$akta->nomor_kk}}"
-                            disabled>
-                        <label for="nomor_kk">Nomor KK*</label>
-                        <span class="helper-text">Nomor Kartu Keluarga</span>
+                        <select id="select" name="tempat_dilahirkan" disabled>
+                            <option disabled selected> {{$akta->tempat_dilahirkan}}</option>
+                        </select>
+                        <span class="helper-text">Tempat dilahirkan</span>
                     </div>
+
                 </div>
 
                 {{-- 2 --}}
                 <div class="row" style="margin-top: 30px">
-                    <div class="input-field col s3">
-                        <input id="nama_anak" type="text" class="validate" name="nama_anak" value="{{$akta->nama_anak}}"
-                            disabled>
-                        <label for="nama_anak">Nama Anak*</label>
-                        <span class="helper-text">Nama Anak</span>
-                    </div>
+
 
                     <div class="input-field col s3">
                         <input id="tanggal_lahir" type="text" class="datepicker" name="tanggal_lahir"
@@ -79,6 +76,14 @@
                             value="{{$akta->nama_kepala_keluarga}}" disabled>
                         <label for="nama_kepala_keluarga">Nama Kepala Keluarga*</label>
                         <span class="helper-text">Nama Kepala Keluarga</span>
+                    </div>
+
+                    
+                    <div class="input-field col s3">
+                        <select id="select" name="jenis_kelahiran" disabled>
+                            <option disabled selected> {{$akta->jenis_kelahiran}}</option>
+                        </select>
+                        <span class="helper-text">Jenis Kelahiran</span>
                     </div>
                 </div>
 
@@ -105,28 +110,10 @@
                         <span class="helper-text">Berat bayi dalam kilogram</span>
                     </div>
 
-                    <div class="input-field col s3">
-                        <input id="no_hp" type="number" class="validate" name="no_hp" value="{{$akta->no_hp}}" disabled>
-                        <label for="no_hp">Nomor Handphone*</label>
-                        <span class="helper-text">Nomor Handphone</span>
-                    </div>
                 </div>
 
                 {{-- 4 --}}
                 <div class="row" style="margin-top: 30px;">
-                    <div class="input-field col s3">
-                        <select id="select" name="tempat_dilahirkan" disabled>
-                            <option disabled selected> {{$akta->tempat_dilahirkan}}</option>
-                        </select>
-                        <span class="helper-text">Tempat dilahirkan</span>
-                    </div>
-
-                    <div class="input-field col s3">
-                        <select id="select" name="jenis_kelahiran" disabled>
-                            <option disabled selected> {{$akta->jenis_kelahiran}}</option>
-                        </select>
-                        <span class="helper-text">Jenis Kelahiran</span>
-                    </div>
 
                     <div class="input-field col s3">
                         <input id="tinggi_bayi" type="number" class="validate" name="tinggi_bayi"
@@ -202,6 +189,13 @@
                         <span class="helper-text">Warga negara wni/wna</span>
                     </div>
 
+                    <div class="input-field col s3">
+                        <input id="nomor_kk" type="number" class="validate" name="nomor_kk" value="{{$akta->nomor_kk}}"
+                            disabled>
+                        <label for="nomor_kk">Nomor KK*</label>
+                        <span class="helper-text">Nomor Kartu Keluarga</span>
+                    </div>
+
                 </div>
 
                 {{-- 3 --}}
@@ -225,6 +219,12 @@
                         <input id="agama" type="text" class="validate" name="agama" value="{{$akta->agama}}" disabled>
                         <label for="agama">Agama</label>
                         <span class="helper-text">Agama</span>
+                    </div>
+
+                    <div class="input-field col s3">
+                        <input id="no_hp" type="number" class="validate" name="no_hp" value="{{$akta->no_hp}}" disabled>
+                        <label for="no_hp">Nomor Handphone*</label>
+                        <span class="helper-text">Nomor Handphone</span>
                     </div>
 
                 </div>

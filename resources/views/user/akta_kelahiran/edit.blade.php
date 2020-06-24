@@ -182,14 +182,6 @@
                                 @enderror
                             </div>
         
-                            <div class="input-field col s3">
-                                <input id="no_hp" type="number" class="validate" name="no_hp" value="{{old('no_hp', $akta->no_hp)}}">
-                                <label for="no_hp">Nomor Handphone*</label>
-                                <span class="helper-text">Nomor Handphone</span>
-                                @error('no_hp')
-                                    <span class="helper-text red-text">{{ $message }}</span>
-                                @enderror
-                            </div>
                         </div>
         
                         {{-- 4 --}}
@@ -334,6 +326,15 @@
                                 <label for="agama">Agama</label>
                                 <span class="helper-text">Agama</span>
                                 @error('agama')
+                                    <span class="helper-text red-text">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <div class="input-field col s3">
+                                <input id="no_hp" type="number" class="validate" name="no_hp" value="{{old('no_hp', $akta->no_hp)}}">
+                                <label for="no_hp">Nomor Handphone*</label>
+                                <span class="helper-text">Nomor Handphone</span>
+                                @error('no_hp')
                                     <span class="helper-text red-text">{{ $message }}</span>
                                 @enderror
                             </div>

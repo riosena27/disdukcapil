@@ -15,7 +15,7 @@ class AdminController extends Controller
         
         $user = User::whereHas('roles', function (Builder $query) {
             $query->where('name', '!=', 'User');
-        })->get();
+        })->paginate(5);
         return view('admin.index', [
             'user' => $user
         ]);
