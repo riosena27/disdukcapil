@@ -27,11 +27,11 @@ class CreateAktaKelahiranTable extends Migration
             $table->text('nama_kepala_keluarga');
             $table->string('jenis_kelamin');
             $table->string('waktu_lahir');
-            $table->integer('berat_bayi');
+            $table->float('berat_bayi');
             $table->string('no_hp');
             $table->string('tempat_dilahirkan');
             $table->string('jenis_kelahiran');
-            $table->integer('tinggi_bayi');
+            $table->float('tinggi_bayi');
             $table->string('warga_negara');
             $table->char('nik_ayah', 16)->nullable();
             $table->text('pekerjaan_ayah')->nullable();
@@ -45,7 +45,7 @@ class CreateAktaKelahiranTable extends Migration
             $table->text('agama');
             $table->text('nama_ibu');
             $table->string('warga_negara_ibu');
-            $table->string('tanggal_perkawinan');
+            $table->string('tanggal_perkawinan')->nullable();
             $table->char('nik_saksi_1', 16)->nullable();
             $table->integer('umur_saksi_1');
             $table->text('alamat_saksi_1');

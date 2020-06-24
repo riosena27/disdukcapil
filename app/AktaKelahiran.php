@@ -8,6 +8,7 @@ class AktaKelahiran extends Model
 {
     protected $table = 'akta_kelahiran';
     protected $guarded = [];
+    protected $dates = ['tanggal_pengambilan'];
 
     public function user(){
         return $this->belongsTo('App\User');
@@ -27,5 +28,9 @@ class AktaKelahiran extends Model
 
     public function kadis(){
         return $this->belongsTo('App\User', 'kadis_id');
+    }
+
+    public function operatorloket(){
+        return $this->belongsTo('App\User', 'operator_loket_id');
     }
 }

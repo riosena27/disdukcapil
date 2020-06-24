@@ -43,6 +43,11 @@ class RolesSeeder extends Seeder
             'deskripsi' => 'Kadis'
         ]);
 
+        Role::create([
+            'name' => 'Operator Loket',
+            'deskripsi' => 'Operator Loket'
+        ]);
+
 
     }
 }

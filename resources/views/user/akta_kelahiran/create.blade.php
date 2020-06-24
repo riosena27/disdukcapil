@@ -8,11 +8,7 @@
 
     <div class="card">
         <div class="card-content">
-            <div class="row">
-                <a href="{{url('akta-kelahiran')}}" class="waves-effect waves-light btn red left"><i
-                        class="material-icons left">keyboard_backspace</i></a>
-            </div>
-            <hr>
+
             <span class="card-title">Pengajuan Akta Kelahiran </span><span class="helper-text">*wajib diisi</span>
             <blockquote>
                 Data Bayi
@@ -25,7 +21,7 @@
                 <div class="row" style="margin-top: 20px">
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="nama_anak" type="text" class="validate" name="nama_anak" value="{{old('nama_anak')}}" required>
+                        <input id="nama_anak" type="text" class="validate" name="nama_anak" value="{{old('nama_anak')}}">
                         <label for="nama_anak">Nama Anak*</label>
                         <span class="helper-text">Nama Anak</span>
                         @error('nama_anak')
@@ -34,7 +30,7 @@
                     </div>
                     
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="tempat_kelahiran" type="text" class="validate" name="tempat_kelahiran" value="{{old('tempat_kelahiran')}}" required>
+                        <input id="tempat_kelahiran" type="text" class="validate" name="tempat_kelahiran" value="{{old('tempat_kelahiran')}}">
                         <label for="tempat_kelahiran">Tempat Kelahiran*</label>
                         <span class="helper-text">Tempat Kelahiran, cth: Balikpapan</span>
                         @error('tempat_kelahiran')
@@ -43,7 +39,7 @@
                     </div>
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="kelahiran" type="text" class="validate" name="kelahiran" value="{{old('kelahiran')}}" required>
+                        <input id="kelahiran" type="text" class="validate" name="kelahiran" value="{{old('kelahiran')}}">
                         <label for="kelahiran">Kelahiran ke*</label>
                         <span class="helper-text">Cth: 1</span>
                         @error('kelahiran')
@@ -52,7 +48,7 @@
                     </div>
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <select id="select" name="tempat_dilahirkan" required>
+                        <select id="select" name="tempat_dilahirkan">
                             <option value="" disabled selected> Tempat Dilahirkan*</option>
                             <option value="Rumah Sakit" {{ old('tempat_dilahirkan') == "Rumah Sakit" ? 'selected' : '' }}>Rumah Sakit</option>
                             <option value="Puskesmas" {{ old('tempat_dilahirkan') == "Puskesmas" ? 'selected' : '' }}>Puskesmas</option>
@@ -71,7 +67,7 @@
                 <div class="row" style="margin-top: 30px">
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="tanggal_lahir" type="text" class="datepicker" name="tanggal_lahir" value="{{old('tanggal_lahir')}}" required>
+                        <input id="tanggal_lahir" type="text" class="datepicker" name="tanggal_lahir" value="{{old('tanggal_lahir')}}">
                         <label for="tanggal_lahir">Tanggal Lahir*</label>
                         <span class="helper-text left-align">Tanggal lahir bayi.</span>
                         @error('tanggal_lahir')
@@ -80,7 +76,7 @@
                     </div>
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <select name="penolong_kelahiran" required>
+                        <select name="penolong_kelahiran">
                             <option disabled selected>Penolong Kelahiran*</option>
                             <option value="Dokter" {{ old('penolong_kelahiran') == "Dokter" ? 'selected' : '' }}>Dokter</option>
                             <option value="Bidan/perawat" {{ old('penolong_kelahiran') == "Bidan/perawat" ? 'selected' : '' }}>Bidan/Perawat</option>
@@ -94,7 +90,7 @@
                     </div>
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="nama_kepala_keluarga" type="text" class="validate" name="nama_kepala_keluarga" value="{{old('nama_kepala_keluarga')}}" required>
+                        <input id="nama_kepala_keluarga" type="text" class="validate" name="nama_kepala_keluarga" value="{{old('nama_kepala_keluarga')}}">
                         <label for="nama_kepala_keluarga">Nama Kepala Keluarga*</label>
                         <span class="helper-text">Nama Kepala Keluarga</span>
                         @error('nama_kepala_keluarga')
@@ -103,7 +99,7 @@
                     </div>
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <select id="select" name="jenis_kelahiran" required>
+                        <select id="select" name="jenis_kelahiran">
                             <option value="" disabled selected> Jenis Kelahiran*</option>
                             <option value="Tunggal" {{ old('jenis_kelahiran') == "Tunggal" ? 'selected' : '' }}>Tunggal</option>
                             <option value="Kembar 1" {{ old('jenis_kelahiran') == "Kembar 1" ? 'selected' : '' }}>Kembar 1</option>
@@ -119,7 +115,7 @@
                 {{-- 3 --}}
                 <div class="row" style="margin-top: 30px">
                     <div class="input-field col s3" style="margin: 0px">
-                        <select id="select" name="jenis_kelamin" required>
+                        <select id="select" name="jenis_kelamin">
                             <option value="" disabled selected> Pilih Jenis Kelamin</option>
                             <option value="Laki-Laki" {{ old('jenis_kelamin') == "Laki-Laki" ? 'selected' : '' }}>Laki-laki</option>
                             <option value="Wanita" {{ old('jenis_kelamin') == "Wanita" ? 'selected' : '' }}>Wanita</option>
@@ -131,7 +127,7 @@
                     </div>
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="waktu_lahir" type="text" class="timepicker" name="waktu_lahir" value="{{old('waktu_lahir')}}" required>
+                        <input id="waktu_lahir" type="text" class="timepicker" name="waktu_lahir" value="{{old('waktu_lahir')}}">
                         <label for="waktu_lahir">Waktu Lahir*</label>
                         <span class="helper-text left-align">Waktu Lahir</span>
                         @error('waktu_lahir')
@@ -140,7 +136,7 @@
                     </div>
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="berat_bayi" type="number" class="validate" name="berat_bayi" value="{{old('berat_bayi')}}" required>
+                        <input id="berat_bayi" type="number" class="validate" name="berat_bayi" value="{{old('berat_bayi')}}" min="0" step="0.01">
                         <label for="berat_bayi">Berat Bayi*</label>
                         <span class="helper-text">Berat bayi dalam kilogram</span>
                         @error('berat_bayi')
@@ -148,14 +144,6 @@
                         @enderror
                     </div>
 
-                    <div class="input-field col s3" style="margin: 0px">
-                        <input id="no_hp" type="number" class="validate" name="no_hp" value="{{old('no_hp')}}" required>
-                        <label for="no_hp">Nomor Handphone*</label>
-                        <span class="helper-text">Nomor Handphone</span>
-                        @error('no_hp')
-                            <span class="helper-text red-text">{{ $message }}</span>
-                        @enderror
-                    </div>
                 </div>
 
                 {{-- 4 --}}
@@ -163,7 +151,7 @@
 
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="tinggi_bayi" type="number" class="validate" name="tinggi_bayi" value="{{old('tinggi_bayi')}}" required>
+                        <input id="tinggi_bayi" type="number" class="validate" name="tinggi_bayi" value="{{old('tinggi_bayi')}}" min="0" step="0.01">
                         <label for="tinggi_bayi">Tinggi Bayi*</label>
                         <span class="helper-text">Tinggi Bayi dalam cm</span>
                         @error('tinggi_bayi')
@@ -172,7 +160,7 @@
                     </div>
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <select id="select" name="warga_negara" required>
+                        <select id="select" name="warga_negara">
                             <option value="" disabled selected> Warga Negara*</option>
                             <option value="WNI" {{ old('warga_negara') == "WNI" ? 'selected' : '' }}>WNI</option>
                             <option value="WNA" {{ old('warga_negara') == "WNA" ? 'selected' : '' }}>WNA</option>
@@ -193,7 +181,7 @@
                     <div class="input-field col s3" style="margin: 0px">
                         <input id="nik_ayah" type="number" class="validate" name="nik_ayah" value="{{old('nik_ayah')}}" data-length="16">
                         <label for="nik_ayah">NIK Ayah</label>
-                        <span class="helper-text" data-error="Isi nama anda" data-success="Nama ok">Nomor Induk
+                        <span class="helper-text" data-error="Isi dengan nik yang valid" data-success="Nama ok">Nomor Induk
                             Keluarga Ayah</span>
                             @error('nik_ayah')
                             <span class="helper-text red-text">{{ $message }}</span>
@@ -252,7 +240,7 @@
                     </div>
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <select id="select" name="status_perkawinan" required>
+                        <select id="select" name="status_perkawinan">
                             <option value="" disabled selected> Status Perkawinan*</option>
                             <option value="Sah" {{ old('status_perkawinan') == "Sah" ? 'selected' : '' }}>Sah</option>
                             <option value="Tidak sah" {{ old('status_perkawinan') == "Tidak Sah" ? 'selected' : '' }}>Tidak sah</option>
@@ -264,7 +252,7 @@
                     </div>
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="nomor_kk" type="number" class="validate" name="nomor_kk" value="{{old('nomor_kk')}}" data-length="16" required>
+                        <input id="nomor_kk" type="number" class="validate" name="nomor_kk" value="{{old('nomor_kk')}}" data-length="16">
                         <label for="nomor_kk">Nomor KK*</label>
                         <span class="helper-text">Nomor Kartu Keluarga</span>
                         @error('nomor_kk')
@@ -277,7 +265,7 @@
                 {{-- 3 --}}
                 <div class="row" style="margin-top: 20px">
                     <div class="input-field col s3" style="margin: 0px" >
-                        <input id="nik_ibu" type="number" class="validate" name="nik_ibu" value="{{old('nik_ibu')}}" data-length="16" required>
+                        <input id="nik_ibu" type="number" class="validate" name="nik_ibu" value="{{old('nik_ibu')}}" data-length="16">
                         <label for="nik_ibu">NIK Ibu</label>
                         <span class="helper-text">Nomor Induk
                             Keluarga Ibu</span>
@@ -287,7 +275,7 @@
                     </div>
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="pekerjaan_ibu" type="text" class="validate" name="pekerjaan_ibu" value="{{old('pekerjaan_ibu')}}" required>
+                        <input id="pekerjaan_ibu" type="text" class="validate" name="pekerjaan_ibu" value="{{old('pekerjaan_ibu')}}">
                         <label for="pekerjaan_ibu">Pekerjaan Ibu*</label>
                         <span class="helper-text">Pekerjaan Ibu, cth: IRT</span>
                         @error('pekerjaan_ibu')
@@ -296,10 +284,19 @@
                     </div>
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="agama" type="text" class="validate" name="agama" value="{{old('agama')}}" required>
+                        <input id="agama" type="text" class="validate" name="agama" value="{{old('agama')}}">
                         <label for="agama">Agama</label>
                         <span class="helper-text">Agama</span>
                         @error('agama')
+                            <span class="helper-text red-text">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="input-field col s3" style="margin: 0px">
+                        <input id="no_hp" type="number" class="validate" name="no_hp" value="{{old('no_hp')}}">
+                        <label for="no_hp">Nomor Handphone*</label>
+                        <span class="helper-text">Nomor Handphone</span>
+                        @error('no_hp')
                             <span class="helper-text red-text">{{ $message }}</span>
                         @enderror
                     </div>
@@ -309,7 +306,7 @@
                 {{-- 4 --}}
                 <div class="row" style="margin-top: 20px">
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="nama_ibu" type="text" class="validate" name="nama_ibu" value="{{old('nama_ibu')}}" required>
+                        <input id="nama_ibu" type="text" class="validate" name="nama_ibu" value="{{old('nama_ibu')}}">
                         <label for="nama_ibu">Nama Ibu</label>
                         <span class="helper-text">Nama Ibu</span>
                         @error('nama_ibu')
@@ -318,7 +315,7 @@
                     </div>
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <select id="select" name="warga_negara_ibu" required>
+                        <select id="select" name="warga_negara_ibu">
                             <option value="" disabled selected> Warga Negara Ibu*</option>
                             <option value="WNI" {{ old('warga_negara_ibu') == "WNI" ? 'selected' : '' }}>WNI</option>
                             <option value="WNA" {{ old('warga_negara_ibu') == "WNI" ? 'selected' : '' }}>WNA</option>
@@ -330,7 +327,7 @@
                     </div>
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="tanggal_perkawinan" type="text" class="datepicker" name="tanggal_perkawinan" value="{{old('tanggal_perkawinan')}}" required>
+                        <input id="tanggal_perkawinan" type="text" class="datepicker" name="tanggal_perkawinan" value="{{old('tanggal_perkawinan')}}">
                         <label for="tanggal_perkawinan">Tanggal Perkawinan*</label>
                         <span class="helper-text left-align">Tanggal Perkawinan</span>
                         @error('tanggal_perkawinan')
@@ -347,7 +344,7 @@
 
                 <div class="row" style="margin-top: 20px">
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="nik_saksi_1" type="number" class="validate" name="nik_saksi_1" value="{{old('nik_saksi_1')}}" data-length="16" required>
+                        <input id="nik_saksi_1" type="number" class="validate" name="nik_saksi_1" value="{{old('nik_saksi_1')}}" data-length="16">
                         <label for="nik_saksi_1">NIK Saksi 1*</label>
                         <span class="helper-text">Nomor Induk
                             Keluarga Saksi 1</span>
@@ -357,7 +354,7 @@
                     </div>
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="umur_saksi_1" type="number" class="validate" name="umur_saksi_1" value="{{old('umur_saksi_1')}}" required min="17">
+                        <input id="umur_saksi_1" type="number" class="validate" name="umur_saksi_1" value="{{old('umur_saksi_1')}}" min="17">
                         <label for="umur_saksi_1">Umur Saksi 1*</label>
                         <span class="helper-text">Umur Saksi 1, minimal 17 tahun</span>
                         @error('umur_saksi_1')
@@ -366,7 +363,7 @@
                     </div>
 
                     <div class="input-field col s6" style="margin: 0px">
-                        <input id="alamat_saksi_1" type="text" class="validate" name="alamat_saksi_1" value="{{old('alamat_saksi_1')}}" required>
+                        <input id="alamat_saksi_1" type="text" class="validate" name="alamat_saksi_1" value="{{old('alamat_saksi_1')}}">
                         <label for="alamat_saksi_1">Alamat Saksi 1</label>
                         <span class="helper-text">Alamat Saksi 1</span>
                         @error('alamat_saksi_1')
@@ -381,7 +378,7 @@
                         <input id="nik_saksi_2" type="number" class="validate" name="nik_saksi_2" value="{{old('nik_saksi_2')}}" data-length="16">
                         <label for="nik_saksi_2">NIK Saksi 2</label>
                         <span class="helper-text">Nomor Induk
-                            Keluarga Saksi 1</span>
+                            Keluarga Saksi 2</span>
                             @error('nik_saksi_2')
                             <span class="helper-text red-text">{{ $message }}</span>
                         @enderror
@@ -409,7 +406,7 @@
 
                 <div class="row" style="margin-top: 20px">
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="nama_saksi_1" type="text" class="validate" name="nama_saksi_1" value="{{old('nama_saksi_1')}}" required>
+                        <input id="nama_saksi_1" type="text" class="validate" name="nama_saksi_1" value="{{old('nama_saksi_1')}}">
                         <label for="nama_saksi_1">Nama Saksi 1*</label>
                         <span class="helper-text">Nama Saksi 1</span>
                         @error('nama_saksi_1')
@@ -418,7 +415,7 @@
                     </div>
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="pekerjaan_saksi_1" type="text" class="validate" name="pekerjaan_saksi_1" value="{{old('pekerjaan_saksi_1')}}" required>
+                        <input id="pekerjaan_saksi_1" type="text" class="validate" name="pekerjaan_saksi_1" value="{{old('pekerjaan_saksi_1')}}">
                         <label for="pekerjaan_saksi_1">Pekerjaan Saksi 1*</label>
                         <span class="helper-text">Pekerjaan Saksi 1</span>
                         @error('pekerjaan_saksi_1')
@@ -460,7 +457,7 @@
                     <div class="file-field input-field col s6" style="margin:0px">
                         <div class="btn">
                             <span>File</span>
-                            <input type="file" name="surat_keterangan_lahir" required>
+                            <input type="file" name="surat_keterangan_lahir">
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Upload your file">
@@ -474,7 +471,7 @@
                     <div class="file-field input-field col s6" style="margin:0px">
                         <div class="btn">
                             <span>File</span>
-                            <input type="file" name="kartu_keluarga" required>
+                            <input type="file" name="kartu_keluarga">
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Upload your file">
@@ -490,7 +487,7 @@
                     <div class="file-field input-field col s6" style="margin:0px">
                         <div class="btn">
                             <span>File</span>
-                            <input type="file" name="keterangan_akta_orang_tua" required>
+                            <input type="file" name="keterangan_akta_orang_tua">
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Upload your file">
@@ -504,7 +501,7 @@
                     <div class="file-field input-field col s6" style="margin:0px">
                         <div class="btn">
                             <span>File</span>
-                            <input type="file" name="sptjm_pasutri" required>
+                            <input type="file" name="sptjm_pasutri">
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Upload your file">
@@ -520,7 +517,7 @@
                     <div class="file-field input-field col s6" style="margin:0px">
                         <div class="btn">
                             <span>File</span>
-                            <input type="file" name="keterangan_permohonan_kelahiran" required>
+                            <input type="file" name="keterangan_permohonan_kelahiran">
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Upload your file">
@@ -534,7 +531,7 @@
                     <div class="file-field input-field col s6" style="margin:0px">
                         <div class="btn">
                             <span>File</span>
-                            <input type="file" name="sptjm_kebenaran_kelahiran" required>
+                            <input type="file" name="sptjm_kebenaran_kelahiran">
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Upload your file">
@@ -550,7 +547,7 @@
                     <div class="file-field input-field col s6" style="margin:0px">
                         <div class="btn">
                             <span>File</span>
-                            <input type="file" name="keterangan_anak_kawin" required>
+                            <input type="file" name="keterangan_anak_kawin">
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Upload your file">
@@ -564,7 +561,7 @@
                     <div class="file-field input-field col s6" style="margin:0px">
                         <div class="btn">
                             <span>File</span>
-                            <input type="file" name="pernyataan_saksi" required>
+                            <input type="file" name="pernyataan_saksi">
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Upload your file">
@@ -580,7 +577,7 @@
                     <div class="file-field input-field col s6" style="margin:0px">
                         <div class="btn">
                             <span>File</span>
-                            <input type="file" name="ktp_saksi_balikpapan" required>
+                            <input type="file" name="ktp_saksi_balikpapan">
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Upload your file">
@@ -594,7 +591,7 @@
                     <div class="file-field input-field col s6" style="margin:0px">
                         <div class="btn">
                             <span>File</span>
-                            <input type="file" name="surat_kuasa" required>
+                            <input type="file" name="surat_kuasa">
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Upload your file">
@@ -610,7 +607,7 @@
                     <div class="file-field input-field col s6" style="margin:0px">
                         <div class="btn">
                             <span>File</span>
-                            <input type="file" name="fotocopy_akta_anak" required>
+                            <input type="file" name="fotocopy_akta_anak">
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Upload your file">

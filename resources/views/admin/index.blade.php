@@ -42,6 +42,9 @@
                         @endforeach
                     </tbody>
                 </table>
+
+                {{$user->links('vendor.pagination.materializecss')}}
+                
                 <!-- Modal Structure -->
                 <form action="" method="POST" id="deleteForm">
                     @method('delete')
