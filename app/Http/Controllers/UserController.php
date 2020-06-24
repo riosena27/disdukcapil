@@ -133,7 +133,7 @@ class UserController extends Controller
 
             'greeting' => 'Hello '. $user->name,
 
-            'body' => 'Ini kode verifikasi anda ',
+            'body' => 'Berikut merupakan kode verifikasi anda, jangan beritahu siapapun ',
 
             'kode' => $user->kode_verifikasi,
 
@@ -145,7 +145,7 @@ class UserController extends Controller
 
 
         ];
-
+        
         $user->notify(new EmailNotification($details));
 
         return redirect('/thanks');
