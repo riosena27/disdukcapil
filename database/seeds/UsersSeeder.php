@@ -18,6 +18,7 @@ class UsersSeeder extends Seeder
         $kasieRole = Role::where('name' , 'Kasie')->first();
         $kabidRole = Role::where('name' , 'Kabid')->first();
         $kadisRole = Role::where('name' , 'Kadis')->first();
+        $operatorLoketRole = Role::where('name' , 'Operator Loket')->first();
 
         $admin = User::create([
             'name' => 'Admin',
@@ -49,10 +50,17 @@ class UsersSeeder extends Seeder
             'password' => Hash::make('kadis123')
         ]);
 
+        $operatorLoket = User::create([
+            'name' => 'Operator Loket',
+            'email' => 'loket@gmail.com',
+            'password' => Hash::make('loket123')
+        ]);
+
         $admin->roles()->attach($adminRole);
         $operator->roles()->attach($operatorRole);
         $kasie->roles()->attach($kasieRole);
         $kabid->roles()->attach($kabidRole);
         $kadis->roles()->attach($kadisRole);
+        $operatorLoket->roles()->attach($operatorLoketRole);
     }
 }

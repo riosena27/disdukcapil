@@ -60,6 +60,16 @@
             </li>
             
             @endcan
+
+            @can('loket')
+            <li class="header">Operator Loket</li>
+            <li>
+                <a href="{{url('operator-loket')}}">
+                    <i class="fa fa-home" aria-hidden="true"></i> Review 
+                </a>
+            </li>
+            
+            @endcan
             <li>
                 <a href="{{url('riwayat')}}">
                     <i class="fa fa-tachometer" aria-hidden="true"></i> Riwayat
