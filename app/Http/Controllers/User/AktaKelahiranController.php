@@ -29,7 +29,47 @@ class AktaKelahiranController extends Controller
         $userId = Auth::user()->id;
         $userName = Auth::user()->name;
         $waktu = Carbon::now()->format('dmyy');
+
+        $request->validate([
+            'tempat_kelahiran' => 'required',
+            'kelahiran' => 'required',
+            'nomor_kk' => 'required',
+            'nama_anak' => 'required',
+            'tanggal_lahir' => 'required',
+            'penolong_kelahiran' => 'required',
+            'nama_kepala_keluarga' => 'required',
+            'jenis_kelamin' => 'required',
+            'waktu_lahir' => 'required',
+            'berat_bayi' => 'required',
+            'no_hp' => 'required',
+            'jenis_kelahiran' => 'required',
+            'tinggi_bayi' => 'required',
+            'warga_negara' => 'required',
+            'nik_ibu' => 'required',
+            'pekerjaan_ibu' => 'required',
+            'agama' => 'required',
+            'nama_ibu' => 'required',
+            'warga_negara_ibu' => 'required',
+            'nik_saksi_1' => 'required',
+            'umur_saksi_1' => 'required',
+            'alamat_saksi_1' => 'required',
+            'nama_saksi_1' => 'required',
+            'pekerjaan_saksi_1' => 'required',
+            'surat_keterangan_lahir' => 'required|max:1024mb|mimes:pdf',
+            'kartu_keluarga' => 'required|max:1024mb|mimes:pdf',
+            'keterangan_akta_orang_tua' => 'required|max:1024mb|mimes:pdf',
+            'sptjm_pasutri' => 'max:1024mb|mimes:pdf',
+            'keterangan_permohonan_kelahiran' => 'required|max:1024mb|mimes:pdf',
+            'sptjm_kebenaran_kelahiran' => 'required|max:1024mb|mimes:pdf',
+            'keterangan_anak_kawin' => 'required|max:1024mb|mimes:pdf',
+            'pernyataan_saksi' => 'required|max:1024mb|mimes:pdf',
+            'ktp_saksi_balikpapan' => 'required|max:1024mb|mimes:pdf',
+            'surat_kuasa' => 'required|max:1024mb|mimes:pdf',
+            'fotocopy_akta_anak' => 'required|max:1024mb|mimes:pdf',
+        ]);
+
         $data = $request->except(['surat_keterangan_lahir', 'kartu_keluarga', 'keterangan_akta_orang_tua', 'sptjm_pasutri', 'keterangan_permohonan_kelahiran', 'sptjm_kebenaran_kelahiran', 'keterangan_anak_kawin', 'pernyataan_saksi', 'ktp_saksi_balikpapan', 'surat_kuasa', 'fotocopy_akta_anak']);
+
 
         $suratKeteranganLahir = $request->file('surat_keterangan_lahir');
         $suratKeteranganLahirName = $suratKeteranganLahir->getClientOriginalName();
@@ -110,9 +150,10 @@ class AktaKelahiranController extends Controller
     public function update(AktaKelahiran $akta, Request $request){
 
         $userName = Auth::user()->name;
-
+    
         $data = $request->except(['surat_keterangan_lahir', 'kartu_keluarga', 'keterangan_akta_orang_tua', 'sptjm_pasutri', 'keterangan_permohonan_kelahiran', 'sptjm_kebenaran_kelahiran', 'keterangan_anak_kawin', 'pernyataan_saksi', 'ktp_saksi_balikpapan', 'surat_kuasa', 'fotocopy_akta_anak']);
         $data['status_operator'] = 1;
+        
 
         $fileTujuan = 'public/Data User/'.$userName.'/AktaKelahiran/'.$akta->no_resi.'/';
 
@@ -240,5 +281,13 @@ class AktaKelahiranController extends Controller
         $akta->update($data);
 
         return redirect('akta-kelahiran')->with('update', 'Data akta kelahiran berhasil diperbaiki');
+    }
+
+    public function pengambilan(AktaKelahiran $akta, Request $request){
+        
+        $akta->status_pengambilan = $request->pengambilan;
+        $akta->save();
+
+        return back()->with('status', 'Status pengambilan berhasil di set, tunggu status dari operator loket');
     }
 }
