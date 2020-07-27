@@ -24,9 +24,11 @@
                             Akun</a></li>
                     <li class="{{Request::is('/') ? 'active' : ''}}"><a href="{{url('/')}}" class="teal-text">Masuk</a>
                     </li>
+                    <li class="{{Request::is('status-akun') ? 'active' : ''}}"><a href="{{url('status-akun')}}" class="teal-text">Cek resi</a></li>
                     @endguest
-                    <li class="{{Request::is('status-akun') ? 'active' : ''}}"><a href="{{url('status-akun')}}" class="teal-text">Status Akun</a></li>
+                    
                     @auth
+                    <li class="{{Request::is('profil') ? 'active' : ''}}"><a href="{{url('profil')}}" class="teal-text">Profil</a></li>
                     <li class="{{Request::is('riwayat-user') ? 'active' : ''}}"><a href="{{url('riwayat-user')}}" class="teal-text">Riwayat</a></li>
                     <li><a href="{{url('logout')}}" class="red-text">Logout</a></li>
                     @endauth

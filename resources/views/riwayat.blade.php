@@ -4,7 +4,8 @@
 
 @section('content')
 
-<div class="row">
+
+    
     <div class="col s12">
         <div class="card">
             <div class="card-content">
@@ -13,7 +14,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama Pemohon</th>
+                            <th>Nama yang dimohonkan</th>
                             <th style="text-align: center">Status Operator</th>
                             <th style="text-align: center">Status Kasie</th>
                             <th style="text-align: center">Status Kabid</th>
@@ -113,7 +114,7 @@
             </div>
         </div>
     </div>
-</div>
+
 
 
 @endsection

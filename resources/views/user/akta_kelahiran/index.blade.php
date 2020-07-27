@@ -15,8 +15,8 @@
                         <th>Nama Anak</th>
                         <th>Status</th>
                         <th>Tanggal Dibuat</th>
-                        <th>Action</th>
                         <th>Status Pengambilan</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,7 +49,7 @@
                                 @endif
 
                                 @isset($item->tanggal_pengambilan)
-                                <span class="new badge purple center-align" data-badge-caption="Dapat diterima pada tanggal {{$item->tanggal_pengambilan->format('j F Y')}}"></span> <br> <small>Penanggung jawab: {{$item->operatorloket->name}}</small>
+                                <span class="new badge purple center-align" data-badge-caption="berkas telah diambil pada tanggal {{$item->tanggal_pengambilan->format('j F Y')}}"></span> <br> <small>Penanggung jawab: {{$item->operatorloket->name}}</small>
                                 @endisset   
 
                             </td>

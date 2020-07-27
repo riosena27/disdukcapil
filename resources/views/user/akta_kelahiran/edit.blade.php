@@ -219,7 +219,7 @@
                             <div class="input-field col s3">
                                 <input id="nik_ayah" type="number" class="validate" name="nik_ayah" value="{{old('nik_ayah', $akta->nik_ayah)}}">
                                 <label for="nik_ayah">NIK Ayah</label>
-                                <span class="helper-text" data-error="Isi nama anda" data-success="Nama ok">Nomor Induk
+                                <span class="helper-text" data-error="Isi nama anda" data-success="Input NIK merupakan 16 angka, dan sudah benar">Nomor Induk
                                     Keluarga Ayah</span>
                                     @error('nik_ayah')
                                     <span class="helper-text red-text">{{ $message }}</span>
