@@ -40,17 +40,25 @@
                         <h4>Pilih tanggal pengambilan</h4>
 
                         <h6></h6>
-                        <div class="row">
+                        <div class="row" style="margin-bottom: 0">
                             <div class="input-field col s12" style="margin-bottom: 0">
                                 <input type="text" name="tanggal_pengambilan" class="datepicker">
                                 <label for="datepicker">Set Tanggal Pengambilan</label>
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="input-field col s12" style="margin-bottom: 0">
+                                <input  id="deskripsi_pengambilan"  type="text" name="deskripsi_pengambilan" class="validate">
+                                <label for="deskripsi_pengambilan">Deskripsi pengambilan</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+                            <button type="submit" class="modal-close waves-effect waves-green btn blue">Simpan</button>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-                        <button type="submit" class="modal-close waves-effect waves-green btn blue">Simpan</button>
-                    </div>
+                    
                 </div>
             </form>
             </div>
