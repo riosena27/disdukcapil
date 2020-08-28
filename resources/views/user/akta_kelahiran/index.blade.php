@@ -49,8 +49,13 @@
                                 @endif
 
                                 @isset($item->tanggal_pengambilan)
-                                <span class="new badge purple center-align" data-badge-caption="berkas telah diambil pada tanggal {{$item->tanggal_pengambilan->format('j F Y')}}"></span> <br> <small>Penanggung jawab: {{$item->operatorloket->name}}</small>
-                                @endisset   
+                                <span class="new badge purple center-align" data-badge-caption="berkas telah diambil pada tanggal {{$item->tanggal_pengambilan->format('j F Y')}}"></span> <br> <small>Penanggung jawab: {{$item->operatorloket->name}}. @isset($item->deskripsi_pengambilan)
+                                    <a href="#" class="tooltipped modal-trigger deskripsi" data-target="modaldesc" data-position="top" data-name="{{$item->deskripsi_pengambilan}}" data-tooltip="{{$item->deskripsi_pengambilan}}">
+                                    Lihat Deskripsi.
+                                    @endisset</a></small>
+                                @endisset
+                                
+                                
 
                             </td>
                             
@@ -85,6 +90,18 @@
                     </div>
                 </div>
             </form>
+
+            {{-- modal deskripsi --}}
+
+            <div id="modaldesc" class="modal">
+                <div class="modal-content">
+                    <h5>Deskripsi pengambilan permohonan</h5>
+                            <p></p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -110,6 +127,12 @@
                 console.log(header);
                 $("#modal1").find("h6").text("Akta Kelahiran "+header);
                 $("#ambilForm").attr("action", url);
+    });
+
+    $('.deskripsi').click(function () {
+                var desc = $(this).attr('data-name');
+                
+                $("#modaldesc").find("p").text(desc);
     });
 </script>
 @endsection

@@ -23,8 +23,9 @@ class OperatorLoketController extends Controller
         $tanggalPengambilan = new Carbon($request->tanggal_pengambilan);
         $akta->tanggal_pengambilan = $tanggalPengambilan;
         $akta->operator_loket_id = $operator;
+        $akta->deskripsi_pengambilan = $request->deskripsi_pengambilan;
         $akta->save();
 
-        return back()->with('success', 'Tanggal pengambilan berhasil di set');
+        return back()->with('success', 'Tanggal dan deskripsi pengambilan berhasil di set');
     }
 }
