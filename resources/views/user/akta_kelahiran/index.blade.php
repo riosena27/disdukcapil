@@ -16,7 +16,7 @@
                         <th>Status</th>
                         <th>Tanggal Dibuat</th>
                         <th>Status Pengambilan</th>
-                        <th>Action</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,7 +45,7 @@
                                 @endif
 
                                 @if($item->status_kadis == 3 && $item->status_pengambilan == null)
-                                <button data-target="modal1" data-name="{{$item->nama_anak}}" data-url="{{url('akta-kelahiran/pengambilan/'.$item->id)}}" class="btn-floating btn-large waves-effect waves-light blue btn-small tooltipped btn modal-trigger ambil-data" data-position="top" data-tooltip="Lihat Detail"><i class="material-icons">folder_open</i></button>
+                                <button data-target="modal1" data-name="{{$item->nama_anak}}" data-url="{{url('akta-kelahiran/pengambilan/'.$item->id)}}" class="btn-floating btn-large waves-effect waves-light blue btn-small tooltipped btn modal-trigger ambil-data" data-position="top" data-tooltip="Pilih jenis pengambilan"><i class="material-icons">folder_open</i></button>
                                 @endif
 
                                 @isset($item->tanggal_pengambilan)
