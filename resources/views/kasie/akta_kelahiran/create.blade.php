@@ -34,14 +34,14 @@
                         <input id="tempat_kelahiran" type="text" class="validate" name="tempat_kelahiran"
                             value="{{$akta->tempat_kelahiran}}" disabled>
                         <label for="tempat_kelahiran">Tempat Kelahiran*</label>
-                        <span class="helper-text">Tempat Kelahiran, cth: Balikpapan</span>
+                        <span class="helper-text">Tempat Kelahiran, contoh: Balikpapan</span>
                     </div>
 
                     <div class="input-field col s3">
                         <input id="kelahiran" type="text" class="validate" name="kelahiran" value="{{$akta->kelahiran}}"
                             disabled>
                         <label for="kelahiran">Kelahiran ke*</label>
-                        <span class="helper-text">Cth: 1</span>
+                        <span class="helper-text">contoh: 1</span>
                     </div>
 
                     <div class="input-field col s3">
@@ -140,7 +140,7 @@
                         <input id="nik_ayah" type="number" class="validate" name="nik_ayah" value="{{$akta->nik_ayah}}"
                             disabled>
                         <label for="nik_ayah">NIK Ayah</label>
-                        <span class="helper-text" data-error="Isi nama anda" data-success="Nama ok">Nomor Induk
+                        <span class="helper-text" data-error="Isi nama anda" data-success="Input NIK merupakan 16 angka, dan sudah benar">Nomor Induk
                             Keluarga Ayah</span>
                     </div>
 
@@ -148,7 +148,7 @@
                         <input id="pekerjaan_ayah" type="text" class="validate" name="pekerjaan_ayah"
                             value="{{$akta->pekerjaan_ayah}}" disabled>
                         <label for="pekerjaan_ayah">Pekerjaan Ayah*</label>
-                        <span class="helper-text">Pekerjaan Ayah, cth: Swasta</span>
+                        <span class="helper-text">Pekerjaan Ayah, contoh: Swasta</span>
                     </div>
 
                     <div class="input-field col s3">
@@ -212,7 +212,7 @@
                         <input id="pekerjaan_ibu" type="text" class="validate" name="pekerjaan_ibu"
                             value="{{$akta->pekerjaan_ibu}}" disabled>
                         <label for="pekerjaan_ibu">Pekerjaan Ibu*</label>
-                        <span class="helper-text">Pekerjaan Ibu, cth: IRT</span>
+                        <span class="helper-text">Pekerjaan Ibu, contoh: IRT</span>
                     </div>
 
                     <div class="input-field col s3">

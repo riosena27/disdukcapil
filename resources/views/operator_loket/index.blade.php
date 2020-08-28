@@ -37,7 +37,7 @@
                 @csrf
                 <div id="modal1" class="modal">
                     <div class="modal-content">
-                        <h4>Pilih jenis pengambilan</h4>
+                        <h4>Pilih tanggal pengambilan</h4>
 
                         <h6></h6>
                         <div class="row">

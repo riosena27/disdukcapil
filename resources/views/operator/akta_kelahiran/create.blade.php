@@ -40,7 +40,7 @@
                 <div class="input-field col s3">
                     <input id="tempat_kelahiran" type="text" class="validate" name="tempat_kelahiran" value="{{old('tempat_kelahiran', $akta->tempat_kelahiran)}}">
                     <label for="tempat_kelahiran">Tempat Kelahiran*</label>
-                    <span class="helper-text">Tempat Kelahiran, cth: Balikpapan</span>
+                    <span class="helper-text">Tempat Kelahiran, contoh: Balikpapan</span>
                     @error('tempat_kelahiran')
                         <span class="helper-text red-text">{{ $message }}</span>
                     @enderror
@@ -111,7 +111,10 @@
                         <option value="" disabled selected> Jenis Kelahiran*</option>
                         <option value="Tunggal" {{ old('jenis_kelahiran', $akta->jenis_kelahiran) == "Tunggal" ? 'selected' : '' }}>Tunggal</option>
                         <option value="Kembar 1" {{ old('jenis_kelahiran', $akta->jenis_kelahiran) == "Kembar 1" ? 'selected' : '' }}>Kembar 1</option>
-                        <option value="Lainnya" {{ old('jenis_kelahiran', $akta->jenis_kelahiran) == "Lainnya" ? 'selected' : '' }}>Rumah</option>
+                        <option value="Kembar 2" {{ old('jenis_kelahiran', $akta->jenis_kelahiran) == "Kembar 2" ? 'selected' : '' }}>Kembar 2</option>
+                        <option value="Kembar 3" {{ old('jenis_kelahiran', $akta->jenis_kelahiran) == "Kembar 3" ? 'selected' : '' }}>Kembar 3</option>
+                        <option value="Kembar 4" {{ old('jenis_kelahiran', $akta->jenis_kelahiran) == "Kembar 4" ? 'selected' : '' }}>Kembar 4</option>
+                        <option value="Kembar 5" {{ old('jenis_kelahiran', $akta->jenis_kelahiran) == "Kembar 5" ? 'selected' : '' }}>Kembar 5</option>
                     </select>
                     <span class="helper-text">Jenis Kelahiran</span>
                     @error('jenis_kelahiran')
@@ -190,7 +193,7 @@
                 <div class="input-field col s3">
                     <input id="nik_ayah" type="number" class="validate" name="nik_ayah" value="{{old('nik_ayah', $akta->nik_ayah)}}">
                     <label for="nik_ayah">NIK Ayah</label>
-                    <span class="helper-text" data-error="Isi nama anda" data-success="Nama ok">Nomor Induk
+                    <span class="helper-text" data-error="Isi nama anda" data-success="Input NIK merupakan 16 angka, dan sudah benar">Nomor Induk
                         Keluarga Ayah</span>
                         @error('nik_ayah')
                         <span class="helper-text red-text">{{ $message }}</span>
@@ -200,7 +203,7 @@
                 <div class="input-field col s3">
                     <input id="pekerjaan_ayah" type="text" class="validate" name="pekerjaan_ayah" value="{{old('pekerjaan_ayah', $akta->pekerjaan_ayah)}}">
                     <label for="pekerjaan_ayah">Pekerjaan Ayah</label>
-                    <span class="helper-text">Pekerjaan Ayah, cth: Swasta</span>
+                    <span class="helper-text">Pekerjaan Ayah, contoh: Swasta</span>
                     @error('pekerjaan_ayah')
                         <span class="helper-text red-text">{{ $message }}</span>
                     @enderror

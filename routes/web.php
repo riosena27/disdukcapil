@@ -80,8 +80,8 @@ use Illuminate\Support\Facades\Auth;
     
     
     Route::get('riwayat', 'RiwayatController@index')->middleware('auth');
-    Route::get('status-akun', 'StatusAkunController@index');
-    Route::get('status-akun/cari', 'StatusAkunController@index');
+    Route::get('status-akun', 'CekStatusPengajuanController@index');
+    Route::get('status-akun/cari', 'CekStatusPengajuanController@index');
 
     Route::middleware(['auth', 'verifikasi'])->group(function () {
 
@@ -94,6 +94,8 @@ use Illuminate\Support\Facades\Auth;
         Route::post('akta-kelahiran', 'User\AktaKelahiranController@store');
         Route::get('akta-kelahiran/{akta}/edit', 'User\AktaKelahiranController@edit');
         Route::put('akta-kelahiran/{akta}', 'User\AktaKelahiranController@update');
+        Route::get('profil', 'User\ProfilController@index');
+        Route::put('profil/{user}', 'User\ProfilController@update');
     });
 
 

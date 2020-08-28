@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\AktaKelahiran;
 use Illuminate\Http\Request;
+use App\AktaKelahiran;
 
-class StatusAkunController extends Controller
+class CekStatusPengajuanController extends Controller
 {
     public function index(Request $request){
 
         if($request->filled('kode_resi')){
             $akta = AktaKelahiran::where('no_resi', $request->kode_resi)->first();
-
+            
             if($akta){
                 return view('status_akun', [
-                    'akta' => $akta,
+                    'item' => $akta,
                     'kode' => $request->kode_resi
                 ]);
             }

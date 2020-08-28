@@ -101,6 +101,26 @@ class UserController extends Controller
     }
 
     public function verifikasiIndex(){
+        if (Auth::check()) {
+            if(Auth::user()->hasRole('admin')){
+                return back();
+            }
+            if(Auth::user()->hasRole('operator')){
+                return back();
+            }
+            if(Auth::user()->hasRole('kasie')){
+                return back();
+            }
+            if(Auth::user()->hasRole('kabid')){
+                return back();
+            }
+            if(Auth::user()->hasRole('kadis')){
+                return back();
+            }
+            if(Auth::user()->hasRole('Operator Loket')){
+                return back();
+            }
+        }
         return view('login.verifikasi');
     }
 
@@ -136,7 +156,7 @@ class UserController extends Controller
 
             'greeting' => 'Hello '. $user->name,
 
-            'body' => 'Ini kode verifikasi anda ',
+            'body' => 'Berikut merupakan kode verifikasi anda, jangan beritahu siapapun ',
 
             'kode' => $user->kode_verifikasi,
 
@@ -148,7 +168,7 @@ class UserController extends Controller
 
 
         ];
-
+        
         $user->notify(new EmailNotification($details));
 
         return redirect('/thanks');

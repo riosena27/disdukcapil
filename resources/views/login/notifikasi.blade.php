@@ -9,7 +9,7 @@
         <div class="card">
             <div class="card-content">
                 <div class="row">
-                    Terima kasih sudah mendaftar. Kode verifikasi login sudah dikirimkan ke email anda. Gunakan kode tersebut untuk login.
+                    Terima kasih sudah mendaftar. Kode verifikasi untuk registrasi telah dikirimkan ke email anda. Gunakan kode tersebut untuk login.
                 </div>
                 <a href="{{url('/')}}" class="waves-effect waves-light btn red">Kembali</a>
                 

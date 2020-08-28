@@ -103,7 +103,10 @@
                             <option value="" disabled selected> Jenis Kelahiran*</option>
                             <option value="Tunggal" {{ old('jenis_kelahiran') == "Tunggal" ? 'selected' : '' }}>Tunggal</option>
                             <option value="Kembar 1" {{ old('jenis_kelahiran') == "Kembar 1" ? 'selected' : '' }}>Kembar 1</option>
-                            <option value="Lainnya" {{ old('jenis_kelahiran') == "Lainnya" ? 'selected' : '' }}>Rumah</option>
+                            <option value="Kembar 2" {{ old('jenis_kelahiran') == "Kembar 2" ? 'selected' : '' }}>Kembar 2</option>
+                            <option value="Kembar 3" {{ old('jenis_kelahiran') == "Kembar 3" ? 'selected' : '' }}>Kembar 3</option>
+                            <option value="Kembar 4" {{ old('jenis_kelahiran') == "Kembar 4" ? 'selected' : '' }}>Kembar 4</option>
+                            <option value="Lainnya" {{ old('jenis_kelahiran') == "Lainnya" ? 'selected' : '' }}>Lainnya</option>
                         </select>
                         <span class="helper-text">Jenis Kelahiran</span>
                         @error('jenis_kelahiran')
@@ -181,7 +184,7 @@
                     <div class="input-field col s3" style="margin: 0px">
                         <input id="nik_ayah" type="number" class="validate" name="nik_ayah" value="{{old('nik_ayah')}}" data-length="16">
                         <label for="nik_ayah">NIK Ayah</label>
-                        <span class="helper-text" data-error="Isi dengan nik yang valid" data-success="Nama ok">Nomor Induk
+                        <span class="helper-text" data-error="Isi dengan nik yang valid" data-success="Input NIK merupakan 16 angka, dan sudah benar">Nomor Induk
                             Keluarga Ayah</span>
                             @error('nik_ayah')
                             <span class="helper-text red-text">{{ $message }}</span>
@@ -207,7 +210,7 @@
                     </div>
 
                     <div class="input-field col s3" style="margin: 0px">
-                        <input id="nomor_surat_kawin" type="number" class="validate" name="nomor_surat_kawin" value="{{old('nomor_surat_kawin')}}">
+                        <input id="nomor_surat_kawin" type="text" class="validate" name="nomor_surat_kawin" value="{{old('nomor_surat_kawin')}}">
                         <label for="nomor_surat_kawin">Nomor Surat Kawin*</label>
                         <span class="helper-text">Nomor Surat Kawin</span>
                     </div>
@@ -447,7 +450,7 @@
                 </div>
 
                 <blockquote style="margin-top: 30px">
-                    Lampiran Surat Keterangan <br>
+                    Lampiran berkas persayaratan <br>
                     Silakan Diupload dengan hasil scan yang jelas, pdf direkomendasikan.
                 </blockquote>
                 <hr>
@@ -462,7 +465,11 @@
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Upload your file">
                         </div>
-                        <span class="helper-text"> SURAT KETERANGAN LAHIR SAKIT/.BIDAN/DUKUN BERANAK</span>
+                        <span class="helper-text"> SURAT KETERANGAN DARI RUMAH SAKIT/DOKTER/BIDAN/PENOLONG KELAHIRAN
+                                                
+                        
+                        
+                        </span>
                         @error('surat_keterangan_lahir')
                         <span class="helper-text red-text">{{ $message }}</span>
                         @enderror
@@ -492,7 +499,10 @@
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Upload your file">
                         </div>
-                        <span class="helper-text"> SURAT KETERANGAN AKTA NIKAH ORANG TUA</span>
+                        <span class="helper-text"> SURAT KETERANGAN AKTA NIKAH ORANG TUA/BUKU NIKAH/KUTIPAN AKTA NIKAH
+
+                        
+                        </span>
                         @error('keterangan_akta_orang_tua')
                         <span class="helper-text red-text">{{ $message }}</span>
                         @enderror

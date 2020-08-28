@@ -9,10 +9,17 @@
         <div class="card">
             <div class="card-content">
                 <img class="responsive-img" width="150" src="{{url('/asset/layout/login/logobpp.png')}}">
-        
+            
+
                 <div class="row">
                     <div class="col s12">
-                        <h6><b>SISTEM INFORMASI DISDUKCAPIL</b> </h6>
+                        <h6><b>
+                        SELAMAT DATANG DI DISDUKCAPIL
+                        ONLINE KOTA BALIKPAPAN
+                        </b> </h6>
+                        <h7><b>
+                        Layanan Permohonan <i> Online </i> dari Disdukcapil
+                        </b> </h7>
                     </div>
                 </div>
                 <form action="{{url('authenticate')}}" method="post">
@@ -31,7 +38,7 @@
                     </div>
         
                     <div class="row">
-                        <button type="submit" class="waves-effect waves-light btn">Login</a>
+                        <button type="submit" class="waves-effect waves-light btn">MASUK</a>
                     </div>
                 </form>
                 <div class="row">
@@ -41,5 +48,7 @@
         </div>
     </div>
 </div>
+
+
 
 @endsection
